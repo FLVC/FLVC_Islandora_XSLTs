@@ -1,0 +1,24 @@
+<record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:identifier>hpcollection00825.jp2</dc:identifier>
+    <dc:identifier>(IID)FSU0004568</dc:identifier>
+    <!-- <dc:identifier>http://purl.fcla.edu/fcla/dt/FSU0004568</dc:identifier>
+    <dc:identifier>http://purl.fcla.edu/fcla/dt/123456</dc:identifier> -->
+    <dc:creator>Heritage Protocol Photograph Collection</dc:creator>
+    <dc:title>Wiley Housewright</dc:title>
+    <dc:date>undated, circa 1970s</dc:date>
+    <dc:description>Photograph by Richard Parks.</dc:description>
+    <dc:description>B/W; aprox. 8x10 (Accession No. HP-2007-00G).</dc:description>
+    <dc:type>photographs</dc:type>
+    <dc:rights>This image is the property of Florida State University. Its use is governed by U.S. and international copyright laws. To obtain a high-resolution copy of this image for a fee, please contact Florida State University Heritage Protocol.</dc:rights>
+    <dc:subject>Florida State University</dc:subject>
+    <dc:subject>College of Music</dc:subject>
+    <dc:subject>Housewright, Wiley L.</dc:subject>
+    <dc:subject>Circa 1970s</dc:subject>
+    <dc:publisher>Heritage Protocol, Florida State University, Tallahassee, Florida.</dc:publisher>
+    <dc:publisher>Florida Virtual Campus</dc:publisher>
+    
+    <!-- element not accounted for in the stylesheet -->
+    <dc:accessRights>Access rights test data</dc:accessRights>
+    <dc:collection>dc:collection test data</dc:collection>
+    
+</record>

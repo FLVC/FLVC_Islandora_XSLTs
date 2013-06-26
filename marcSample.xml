@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <leader>01776nam  22004333a 4500</leader>
+    <controlfield tag="001">UF00026625_00001</controlfield>
+    <controlfield tag="005">20090304180805.0</controlfield>
+    <controlfield tag="006">m                 </controlfield>
+    <controlfield tag="007">cr       ma mp</controlfield>
+    <controlfield tag="008">051021s1870    enka   js     000 0 eng d</controlfield>
+    <datafield tag="035" ind1="9" ind2=" ">
+      <subfield code="a">001879614</subfield>
+      <subfield code="b">UF</subfield>
+    </datafield>
+    <datafield tag="035" ind1="9" ind2=" ">
+      <subfield code="a">AJV4689</subfield>
+      <subfield code="b">UF</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">FUG</subfield>
+      <subfield code="c">FUG</subfield>
+    </datafield>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The little pussy cats</subfield>
+      <subfield code="h">[electronic resource].</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">London :</subfield>
+      <subfield code="b">Ward, Lock &amp; Tyler,</subfield>
+      <subfield code="c">[ca. 1880]</subfield>
+      <subfield code="e">(London :</subfield>
+      <subfield code="f">W. Dickes)</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">[10] leaves :</subfield>
+      <subfield code="b">ill. ;</subfield>
+      <subfield code="c">26 cm.</subfield>
+    </datafield>
+    <datafield tag="490" ind1=" " ind2=" ">
+      <subfield code="a">Warwick House toy books.</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">Title from cover.</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">Caption title: The little pussy-cats.</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">Includes publisher's advertisement.</subfield>
+    </datafield>
+    <datafield tag="506" ind1=" " ind2=" ">
+      <subfield code="a">All rights reserved, Board of Trustees of the University of Florida.</subfield>
+    </datafield>
+    <datafield tag="533" ind1=" " ind2=" ">
+      <subfield code="a">Electronic reproduction.</subfield>
+      <subfield code="b">Gainesville, Fla. :</subfield>
+      <subfield code="c">University of Florida, George A. Smathers Libraries,</subfield>
+      <subfield code="d">2005.</subfield>
+      <subfield code="f">(University of Florida Digital Collections)</subfield>
+      <subfield code="f">(Children's Literature)</subfield>
+      <subfield code="n">Mode of access: World Wide Web.</subfield>
+      <subfield code="n">System requirements: Internet connectivity; Web browser software.</subfield>
+    </datafield>
+    <datafield tag="535" ind1="1" ind2=" ">
+      <subfield code="a">Baldwin Library of Historical Children's Literature in the Department of Special Collections and Area Studies, George A. Smathers Libraries, University of Florida.</subfield>
+    </datafield>
+    <datafield tag="536" ind1=" " ind2=" ">
+      <subfield code="a">Preservation and Access for American and British Children's Literature, 1870-1889 (NEH PA-50860-00).</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Cats</subfield>
+      <subfield code="v">Juvenile poetry.</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Publishers' advertisements</subfield>
+      <subfield code="y">1870.</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Publishers' advertisements</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+    <datafield tag="690" ind1=" " ind2=" ">
+      <subfield code="a">Bldn</subfield>
+      <subfield code="y">1870.</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2=" ">
+      <subfield code="a">Dickes, William,</subfield>
+      <subfield code="d">1815-1892,</subfield>
+      <subfield code="e">printer.</subfield>
+      <subfield code="4">prt</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Ward, Lock, &amp; Tyler.</subfield>
+      <subfield code="4">pbl</subfield>
+    </datafield>
+    <datafield tag="740" ind1="4" ind2=" ">
+      <subfield code="a">The little pussy-cats.</subfield>
+    </datafield>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">England</subfield>
+      <subfield code="d">London.</subfield>
+    </datafield>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="c">Original</subfield>
+      <subfield code="w">(OCoLC)29394162</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">University of Florida Digital Collections.</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Children's Literature.</subfield>
+    </datafield>
+    <datafield tag="852" ind1=" " ind2=" ">
+      <subfield code="a">SUS01:;:;:</subfield>
+      <subfield code="b">UFDC</subfield>
+      <subfield code="c">JUV</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2="0">
+      <subfield code="u">http://ufdc.ufl.edu/UF00026625</subfield>
+      <subfield code="y">Electronic Resource</subfield>
+    </datafield>
+    <datafield tag="992" ind1="0" ind2="4">
+      <subfield code="a">http://ufdcimages.uflib.ufl.edu/UF/00/02/66/25/00001/00001thm.jpg</subfield>
+    </datafield>
+    <datafield tag="997" ind1=" " ind2=" ">
+      <subfield code="a">Children's Literature</subfield>
+    </datafield>
+  </record>
+</collection>
