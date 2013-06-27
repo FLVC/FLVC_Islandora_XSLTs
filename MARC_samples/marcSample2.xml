@@ -11,6 +11,10 @@
       <subfield code="a">ocm0312</subfield>
       <subfield code="b">UF</subfield>
     </datafield>
+    <datafield tag="035" ind1="9" ind2=" ">
+      <subfield code="a">(DLXS)123456</subfield>
+      <subfield code="b">UF</subfield>
+    </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">FUG</subfield>
       <subfield code="c">FUG</subfield>
@@ -48,6 +52,9 @@
     </datafield>
     <datafield tag="536" ind1=" " ind2=" ">
       <subfield code="a">Electronic resources created as part of a prototype UF Institutional Repository and Faculty Papers project by the University of Florida.</subfield>
+    </datafield>
+    <datafield tag="598" ind1=" " ind2=" ">
+      <subfield code="a">UF00123456</subfield>
     </datafield>
     <datafield tag="650" ind1=" " ind2=" ">
       <subfield code="a">Zoology, Economic.</subfield>
