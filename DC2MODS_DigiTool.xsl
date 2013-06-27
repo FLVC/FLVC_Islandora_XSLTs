@@ -1105,9 +1105,6 @@
                             <xsl:text>purl</xsl:text>
                         </xsl:attribute>
                         <url>
-                            <xsl:attribute name="displayLabel">
-                                <xsl:text>Electronic Resource</xsl:text>
-                            </xsl:attribute>
                             <xsl:value-of select="."/>
                         </url>
                     </location>
@@ -1120,9 +1117,6 @@
                           <xsl:text>purl</xsl:text>
                       </xsl:attribute>
                       <url>
-                          <xsl:attribute name="displayLabel">
-                              <xsl:text>Electronic Resource</xsl:text>
-                          </xsl:attribute>
                           <xsl:value-of select="."/>
                       </url>
                   </location>
