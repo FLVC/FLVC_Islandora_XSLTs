@@ -3,6 +3,7 @@
     <dc:identifier>(IID)FSU0004568</dc:identifier>
     <!-- <dc:identifier>http://purl.fcla.edu/fcla/dt/FSU0004568</dc:identifier>
     <dc:identifier>http://purl.fcla.edu/fcla/dt/123456</dc:identifier> -->
+    <dc:identifier>http://www.fcla.edu</dc:identifier>
     <dc:creator>Heritage Protocol Photograph Collection</dc:creator>
     <dc:title>Wiley Housewright</dc:title>
     <dc:date>undated, circa 1970s</dc:date>
@@ -16,6 +17,8 @@
     <dc:subject>Circa 1970s</dc:subject>
     <dc:publisher>Heritage Protocol, Florida State University, Tallahassee, Florida.</dc:publisher>
     <dc:publisher>Florida Virtual Campus</dc:publisher>
+    <dc:source>http://www.funnycats.com</dc:source>
+    <dc:relation>http://www.morefunnycats.com</dc:relation>
     
     <!-- element not accounted for in the stylesheet -->
     <dc:accessRights>Access rights test data</dc:accessRights>
