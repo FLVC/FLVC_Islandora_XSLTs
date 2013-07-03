@@ -1,4 +1,12 @@
 #################
+## FLVC stuff  ##
+#################
+
+*.MODS.xml
+DC_samples/*.MODS.xml
+MARC_samples/*.MODS.xml
+
+#################
 ## Eclipse
 #################
 
