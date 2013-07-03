@@ -95,6 +95,19 @@
       <subfield code="u">http://ufdc.ufl.edu/UF00053917</subfield>
       <subfield code="y">Electronic Resource</subfield>
     </datafield>
+    <datafield tag="856" ind1="4" ind2="0">
+      <subfield code="u">http://www.worldsbestlinkplace.com/UF00053917</subfield>
+      <subfield code="z">This is a note</subfield>
+      <subfield code="y">Non-permalink</subfield>
+    </datafield>
+    <!-- <datafield tag="856" ind1="4" ind2="0">
+      <subfield code="u">http://purl.fcla.edu/fcla/tc/UF00053917</subfield>
+      <subfield code="y">Permanent Link</subfield>
+      </datafield> -->
+    <datafield tag="856" ind1="4" ind2="2">
+      <subfield code="u">http://www.relatedresource.com</subfield>
+      <subfield code="y">Related Resource</subfield>
+    </datafield>
     <datafield tag="992" ind1="0" ind2="4">
       <subfield code="a">http://ufdcimages.uflib.ufl.edu/UF/00/05/39/17/00001/00001thm.jpg</subfield>
     </datafield>

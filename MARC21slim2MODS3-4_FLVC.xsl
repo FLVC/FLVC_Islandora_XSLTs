@@ -1973,10 +1973,10 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		<xsl:for-each select="marc:datafield[@tag=852]">
 			<xsl:call-template name="createLocationFrom852"/>
 		</xsl:for-each>
-
-		<xsl:for-each select="marc:datafield[@tag=856]">
-			<xsl:call-template name="createLocationFrom856"/>
-		</xsl:for-each>
+		
+		<xsl:call-template name="createLocationFrom856_PURL"/>
+		<xsl:call-template name="createLocationFrom856_URL"/>
+		
 
 		<xsl:for-each select="marc:datafield[@tag=490][@ind1=0]">
 			<xsl:call-template name="createRelatedItemFrom490"/>
@@ -2561,6 +2561,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 
 
 		<!-- 1.51 tmee 20100129-->
+		<!-- FLVC: duplicate code in the LOC code?
 		<xsl:for-each select="marc:datafield[@tag='856'][marc:subfield[@code='u']]">
 			<xsl:if
 				test="starts-with(marc:subfield[@code='u'],'urn:hdl') or starts-with(marc:subfield[@code='u'],'hdl') or starts-with(marc:subfield[@code='u'],'http://hdl.loc.gov') ">
@@ -2595,7 +2596,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 					/>
 				</identifier>
 			</xsl:if>
-		</xsl:for-each>
+		</xsl:for-each> -->
 
 		<xsl:for-each select="marc:datafield[@tag=024][@ind1=1]">
 			<identifier type="upc">
@@ -4079,8 +4080,11 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			<xsl:when test="$sf06a='852'">
 				<xsl:call-template name="createLocationFrom852"/>
 			</xsl:when>
+			
+			<!-- FLVC: not sure if this will still work with new URL / PURL templates... -->
 			<xsl:when test="$sf06a='856'">
-				<xsl:call-template name="createLocationFrom856"/>
+				<xsl:call-template name="createLocationFrom856_URL"/>
+				<xsl:call-template name="createLocationFrom856_PURL"/>
 			</xsl:when>
 
 			<xsl:when test="$sf06a='490'">
@@ -5442,37 +5446,51 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		</location>
 	</xsl:template>
 
-	<xsl:template name="createLocationFrom856">
-		<xsl:if test="//marc:datafield[@tag=856][@ind2!=2][marc:subfield[@code='u']]">
+<!-- FLVC changes for PURL --> 
+	<xsl:template name="createLocationFrom856_PURL">
+		<xsl:choose>
+			<xsl:when test="marc:datafield[@tag=856][@ind2!='2'][marc:subfield[@code='u' and (contains(text(),'purl'))]]">
+				<xsl:for-each select="marc:datafield[@tag=856][@ind2!='2'][marc:subfield[@code='u' and (contains(text(),'purl'))]]">
+					<location displayLabel="purl">
+						<url>
+							<xsl:if test="marc:subfield[@code='y' or @code='3']">
+								<xsl:attribute name="displayLabel">
+									<xsl:call-template name="subfieldSelect">
+										<xsl:with-param name="codes">y3</xsl:with-param>
+									</xsl:call-template>
+								</xsl:attribute>
+							</xsl:if>
+							<xsl:if test="marc:subfield[@code='z']">
+								<xsl:attribute name="note">
+									<xsl:call-template name="subfieldSelect">
+										<xsl:with-param name="codes">z</xsl:with-param>
+									</xsl:call-template>
+								</xsl:attribute>
+							</xsl:if>
+							<xsl:value-of select="marc:subfield[@code='u']"/>
+						</url>
+					</location>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:for-each select="document('purl.xml')/root/purl">
+					<location>
+						<xsl:attribute name="displayLabel">
+							<xsl:text>purl</xsl:text>
+						</xsl:attribute>
+						<url>
+							<xsl:value-of select="."/>
+						</url>
+					</location>
+				</xsl:for-each>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="createLocationFrom856_URL">
+		<xsl:for-each select="marc:datafield[@tag=856][@ind2!='2'][marc:subfield[@code='u' and not(contains(text(),'purl'))]]">
 			<location>
-				<url displayLabel="electronic resource">
-					<!-- 1.41 tmee AQ1.9 added choice protocol for @usage="primary display" -->
-					<xsl:variable name="primary">
-						<xsl:choose>
-							<xsl:when
-								test="@ind2=0 and count(preceding-sibling::marc:datafield[@tag=856] [@ind2=0])=0"
-								>true</xsl:when>
-
-							<xsl:when
-								test="@ind2=1 and 
-							count(ancestor::marc:record//marc:datafield[@tag=856][@ind2=0])=0 and 
-							count(preceding-sibling::marc:datafield[@tag=856][@ind2=1])=0"
-								>true</xsl:when>
-
-							<xsl:when
-								test="@ind2!=1 and @ind2!=0 and 
-							@ind2!=2 and count(ancestor::marc:record//marc:datafield[@tag=856 and 
-							@ind2=0])=0 and count(ancestor::marc:record//marc:datafield[@tag=856 and 
-							@ind2=1])=0 and 
-							count(preceding-sibling::marc:datafield[@tag=856][@ind2])=0"
-								>true</xsl:when>
-							<xsl:otherwise>false</xsl:otherwise>
-						</xsl:choose>
-					</xsl:variable>
-					<xsl:if test="$primary='true'">
-						<xsl:attribute name="usage">primary display</xsl:attribute>
-					</xsl:if>
-
+				<url>
 					<xsl:if test="marc:subfield[@code='y' or @code='3']">
 						<xsl:attribute name="displayLabel">
 							<xsl:call-template name="subfieldSelect">
@@ -5490,7 +5508,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 					<xsl:value-of select="marc:subfield[@code='u']"/>
 				</url>
 			</location>
-		</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 	<!-- accessCondition 506 540 -->
