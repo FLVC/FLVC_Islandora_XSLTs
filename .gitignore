@@ -5,6 +5,8 @@
 *.MODS.xml
 DC_samples/*.MODS.xml
 MARC_samples/*.MODS.xml
+*.procMODS.xml
+MODS_samples/*.procMODS.xml
 
 #################
 ## Eclipse
