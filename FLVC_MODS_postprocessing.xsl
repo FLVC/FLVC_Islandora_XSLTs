@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" 
+    xmlns="http://www.loc.gov/mods/v3"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:mods="http://www.loc.gov/mods/v3">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:flvc="info:/flvc/manifest/v1">
+    
     
     <!-- FLVC cleanup_mods.xsl
          removes empty attributes, empty elements, and elements containing only attributes
@@ -21,20 +24,29 @@
     <xsl:template match="mods:mods">
         <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+            xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd"
+            xmlns:flvc="info:/flvc/manifest/v1">
             <xsl:apply-templates select="node()[normalize-space()]|@*[normalize-space()]"/>
-            <mods:location displayLabel="purl">
-                <mods:url>
-                    <xsl:text>http://purl.flvc.org/</xsl:text>
-                    <xsl:value-of select="mods:extension/mods:owningInstitution"/>
-                    <xsl:text>/fd/</xsl:text>
-                    <xsl:value-of select="mods:identifier[@type='IID']"/>
-                </mods:url>
-            </mods:location>
+            <xsl:call-template name="newPurl"/>
         </mods:mods>
     </xsl:template>
         
     <xsl:template match="*[not(node())] | *[not(node()[2]) and node()/self::text() and not(normalize-space())]"/>
     
+    <xsl:template name="newPurl">
+        <xsl:choose>
+            <xsl:when test="//mods:location[@displayLabel='purl']"/>
+            <xsl:otherwise>
+                <location displayLabel="purl">
+                    <url>
+                        <xsl:text>http://purl.flvc.org/</xsl:text>
+                        <xsl:value-of select="mods:extension/flvc:flvc/flvc:owningInstitution"/>
+                        <xsl:text>/fd/</xsl:text>
+                        <xsl:value-of select="mods:identifier[@type='IID']"/>
+                    </url>
+                </location>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 </xsl:stylesheet>
 
