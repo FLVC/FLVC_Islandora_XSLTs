@@ -535,7 +535,8 @@
     <!-- These when statements check to see if the date value is a 4-digit number, in which case we apply the encoding="w3cdtf" (otherwise not) -->
     <xsl:template match="dc:date">
         <xsl:choose>
-            <xsl:when test="(number(.)=.) and (string-length(string(.))=4)">
+            <!-- <xsl:when test="(number(.)=.) and (string-length(string(.))=4)"> -->
+            <xsl:when test="(string(number(.)) != 'NaN') and (string-length(string(.))=4)">
               <dateIssued encoding="w3cdtf" keyDate="yes">
                   <xsl:apply-templates/>
               </dateIssued>
@@ -1105,7 +1106,7 @@
                             <xsl:text>purl</xsl:text>
                         </xsl:attribute>
                         <url>
-                            <xsl:value-of select="."/>
+                            <xsl:value-of select="replace(.,'fcla.edu','flvc.org')"/>
                         </url>
                     </location>
                 </xsl:for-each>
