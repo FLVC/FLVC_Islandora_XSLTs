@@ -5467,7 +5467,13 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 									</xsl:call-template>
 								</xsl:attribute>
 							</xsl:if>
-							<xsl:value-of select="marc:subfield[@code='u']"/>
+							<!-- <xsl:value-of select="marc:subfield[@code='u']"/> -->
+							<!-- Calls the template below to replace 'fcla.edu' domain with 'flvc.org' domain in PURLs -->
+							<xsl:call-template name="replace-string">
+								<xsl:with-param name="text" select="marc:subfield[@code='u']"/>
+								<xsl:with-param name="replace" select="'fcla.edu'" />
+								<xsl:with-param name="with" select="'flvc.org'"/>
+							</xsl:call-template>
 						</url>
 					</location>
 				</xsl:for-each>
@@ -5483,6 +5489,28 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 						</url>
 					</location>
 				</xsl:for-each>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<!-- FLVC addition: template to replace text in a string for XSLT 1.0 -->
+	<xsl:template name="replace-string">
+		<xsl:param name="text"/>
+		<xsl:param name="replace"/>
+		<xsl:param name="with"/>
+		<xsl:choose>
+			<xsl:when test="contains($text,$replace)">
+				<xsl:value-of select="substring-before($text,$replace)"/>
+				<xsl:value-of select="$with"/>
+				<xsl:call-template name="replace-string">
+					<xsl:with-param name="text"
+						select="substring-after($text,$replace)"/>
+					<xsl:with-param name="replace" select="$replace"/>
+					<xsl:with-param name="with" select="$with"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$text"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
