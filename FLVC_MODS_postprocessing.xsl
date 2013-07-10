@@ -4,7 +4,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:mods="http://www.loc.gov/mods/v3"
-    xmlns:flvc="info:/flvc/manifest/v1">
+    xmlns:flvc="info:flvc/manifest/v1">
     
     
     <!-- FLVC cleanup_mods.xsl
@@ -25,7 +25,7 @@
         <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd"
-            xmlns:flvc="info:/flvc/manifest/v1">
+            xmlns:flvc="info:flvc/manifest/v1">
             <xsl:apply-templates select="node()[normalize-space()]|@*[normalize-space()]"/>
             <xsl:call-template name="newPurl"/>
         </mods:mods>
