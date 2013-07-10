@@ -6,14 +6,11 @@
 	exclude-result-prefixes="mods xlink" 
 	xmlns:marc="http://www.loc.gov/MARC21/slim">
 <!-- 
-	FLVC edits for Islandora MODS-to-MARC use
-	Caitlin Nelson April 2013
-	
 	Upgraded to MODS 3.4 XSLT 1.0 - 2012/05/11
 	MODS v3 to MARC21Slim transformation - 2004/02/20 
 -->
 
-	<xsl:include href="MARC21slimUtils.xsl"/>
+	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
 	
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
@@ -172,7 +169,7 @@
 	</xsl:template>
 
 	<xsl:template match="mods:mods">
-		<marc:record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+		<marc:record>
 			<marc:leader>
 				<!-- 00-04 -->				
 				<xsl:text>     </xsl:text>
@@ -1207,15 +1204,13 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
-	-->
-	<!-- FLVC edit: set 540 field as default when there is no @type, or some other @type -->
+-->
 	<xsl:template match="mods:accessCondition">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">
 			<xsl:choose>
 				<xsl:when test="@type='restrictionOnAccess'">506</xsl:when>
 				<xsl:when test="@type='useAndReproduction'">540</xsl:when>
-				<xsl:otherwise>540</xsl:otherwise>
 			</xsl:choose>
 			</xsl:with-param>
 			<xsl:with-param name="subfields">

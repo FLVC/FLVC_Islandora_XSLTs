@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:flvc="info:/flvc/manifest/v1" version="3.4"
+  xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+  <titleInfo>
+    <title>$10 note, 1864 (front)</title>
+  </titleInfo>
+  <identifier type="">MSS 0-72, Confederate Money, Box 141</identifier>
+  <identifier type="digitool">2854735</identifier>
+  <name>
+    <namePart>Confederate States of America</namePart>
+    <role>
+      <roleTerm type="text" authority="marcrelator">creator</roleTerm>
+    </role>
+  </name>
+  <originInfo>
+    <publisher>Digital Library Center, Florida State University Libraries</publisher>
+    <dateIssued keyDate="yes">February 17, 1864</dateIssued>
+  </originInfo>
+  <note>Issued in Richmond, VA; engraved by Keatinge &amp; Ball, Columbia, S.C. Serial number 65275, Series B-9</note>
+  <note>Lithographed by Evans &amp; Cogswell</note>
+  <subject>
+    <topic>United States--History--Civil War, 1861-1865</topic>
+  </subject>
+  <subject>
+    <topic>Money--Confederate States of America</topic>
+  </subject>
+  <relatedItem>
+    <titleInfo>
+      <title>www.american-south.org</title>
+    </titleInfo>
+  </relatedItem>
+  <location displayLabel="purl">
+    <url>http://purl.flvc.org/fcla/dt/2854735</url>
+  </location>
+  <accessCondition>Digital reproductions are provided for non-commercial, personal, educational, and
+    research use only. All other use, including but not limited to commercial or scholarly
+    reproductions, redistribution, publication, websites, exhibitions, broadcasts, or other
+    transmission, whether by electronic means or otherwise, without prior written permission of the
+    copyright holder is strictly prohibited. For information about the copyright and reproduction
+    rights for this item, please contact the Associate Director for Special Collections and
+    Archives.</accessCondition>
+  <identifier type="IID">FSDT2854735</identifier>
+  <identifier type="fedora">fsu:1877</identifier>
+  <extension>
+    <flvc:flvc>
+      <flvc:owningInstitution>FSU</flvc:owningInstitution>
+      <flvc:submittingInstitution>FSU</flvc:submittingInstitution>
+      <flvc:objectHistory source="digitool">admin_unit="FSU01", ingest_id="ing8361",
+        creator="creator:PSMITH", creation_date="2010-12-21 15:54:34", modified_by="super:TWEATHER",
+        modification_date="2011-04-08 09:36:37"</flvc:objectHistory>
+    </flvc:flvc>
+  </extension>
+</mods>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xmlns:mods="http://www.loc.gov/mods/v3"	
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	exclude-result-prefixes="mods xlink" 
 	xmlns:marc="http://www.loc.gov/MARC21/slim">
-<!-- 
-	FLVC edits for Islandora MODS-to-MARC use
-	Caitlin Nelson April 2013
-	
-	Upgraded to MODS 3.4 XSLT 1.0 - 2012/05/11
-	MODS v3 to MARC21Slim transformation - 2004/02/20 
+	<!-- 
+		FLVC edits for Islandora MODS-to-MARC use
+		Caitlin Nelson April 2013
+		
+	Version 2.0 - 2012/05/11 WS  
+	Upgraded stylesheet to XSLT 2.0 
+	Upgraded to MODS 3.4
+	MODS v3 to MARC21Slim transformation  	ntra 2/20/04 
 -->
 
 	<xsl:include href="MARC21slimUtils.xsl"/>
@@ -557,6 +559,7 @@
 	</xsl:template>
 	<!-- 1/04 fix -->
 	
+
 	<xsl:template match="mods:titleInfo[not(ancestor-or-self::mods:subject)][not(@type)][position()>1]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">246</xsl:with-param>
@@ -763,7 +766,7 @@
 	</xsl:template>
 	
 <!-- Genre elements -->
-	<xsl:template match="mods:genre[@authority!='marcgt' or not(@authority)][not(parent::mods:subject)]">
+	<xsl:template match="mods:genre[@authority!='marcgt' or not(@authority)]">
 		<xsl:variable name="dfv">
 			<xsl:choose>
 				<xsl:when test="@authority = 'content' and @type='musical composition'">047</xsl:when>
@@ -875,65 +878,52 @@
 				</xsl:with-param>
 			</xsl:call-template>
 		</xsl:for-each>
-		<xsl:for-each select="mods:issuance">
-			<xsl:call-template name="datafield">
-				<xsl:with-param name="tag">250</xsl:with-param>
-				<xsl:with-param name="subfields">
+		<xsl:call-template name="datafield">
+			<xsl:with-param name="tag">
+				<xsl:choose>
+					<xsl:when test="@displayLabel='producer' or @displayLabel='publisher' 
+						or @displayLabel='manufacturer' or @displayLabel='distributor'">264</xsl:when>
+					<xsl:otherwise>260</xsl:otherwise>
+				</xsl:choose>
+			</xsl:with-param>
+			<xsl:with-param name="ind2">
+				<xsl:choose>
+					<xsl:when test="@displayLabel='producer'">0</xsl:when>
+					<xsl:when test="@displayLabel='publisher'">1</xsl:when> 
+					<xsl:when test="@displayLabel='manufacturer'">2</xsl:when>
+					<xsl:when test="@displayLabel='distributor'">3</xsl:when>
+				</xsl:choose>
+			</xsl:with-param>
+			<xsl:with-param name="subfields">
+				<!-- v3 place; changed to text  -->
+				<xsl:for-each select="mods:place/mods:placeTerm[@type='text']">
 					<marc:subfield code='a'>
 						<xsl:value-of select="."/>
 					</marc:subfield>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:for-each>
-		<xsl:if test="mods:place/mods:placeTerm[@type='text'] or mods:publisher or mods:dateIssued or mods:dateCreated">
-			<xsl:call-template name="datafield">
-				<xsl:with-param name="tag">
-					<xsl:choose>
-						<xsl:when test="@displayLabel='producer' or @displayLabel='publisher' 
-							or @displayLabel='manufacturer' or @displayLabel='distributor'">264</xsl:when>
-						<xsl:otherwise>260</xsl:otherwise>
-					</xsl:choose>
-				</xsl:with-param>
-				<xsl:with-param name="ind2">
-					<xsl:choose>
-						<xsl:when test="@displayLabel='producer'">0</xsl:when>
-						<xsl:when test="@displayLabel='publisher'">1</xsl:when> 
-						<xsl:when test="@displayLabel='manufacturer'">2</xsl:when>
-						<xsl:when test="@displayLabel='distributor'">3</xsl:when>
-						<xsl:otherwise><xsl:text> </xsl:text></xsl:otherwise>
-					</xsl:choose>
-				</xsl:with-param>
-				<xsl:with-param name="subfields">
-					<!-- v3 place; changed to text  -->
-					<xsl:for-each select="mods:place/mods:placeTerm[@type='text']">
-						<marc:subfield code='a'>
-							<xsl:value-of select="."/>
-						</marc:subfield>
-					</xsl:for-each>
-					<xsl:for-each select="mods:publisher">
-						<marc:subfield code='b'>
-							<xsl:value-of select="."/>
-						</marc:subfield>
-					</xsl:for-each>
-					<xsl:for-each select="mods:dateIssued[@point='start'] | mods:dateIssued[not(@point)]">
-						<marc:subfield code='c'>
-							<xsl:value-of select="."/>
-							<!-- v3.4 generate question mark for dateIssued with qualifier="questionable" -->
-							<xsl:if test="@qualifier='questionable'">?</xsl:if>
-							<!-- v3.4 Generate a hyphen before end date -->
-							<xsl:if test="mods:dateIssued[@point='end']">
-								- <xsl:value-of select="../mods:dateIssued[@point='end']"/>
-							</xsl:if>
-						</marc:subfield>
-					</xsl:for-each>
-					<xsl:for-each select="mods:dateCreated">
-						<marc:subfield code='g'>
-							<xsl:value-of select="."/>
-						</marc:subfield>
-					</xsl:for-each>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:if>		
+				</xsl:for-each>
+				<xsl:for-each select="mods:publisher">
+					<marc:subfield code='b'>
+						<xsl:value-of select="."/>
+					</marc:subfield>
+				</xsl:for-each>
+				<xsl:for-each select="mods:dateIssued[@point='start'] | mods:dateIssued[not(@point)]">
+					<marc:subfield code='c'>
+						<xsl:value-of select="."/>
+						<!-- v3.4 generate question mark for dateIssued with qualifier="questionable" -->
+						<xsl:if test="@qualifier='questionable'">?</xsl:if>
+						<!-- v3.4 Generate a hyphen before end date -->
+						<xsl:if test="mods:dateIssued[@point='end']">
+							- <xsl:value-of select="../mods:dateIssued[@point='end']"/>
+						</xsl:if>
+					</marc:subfield>
+				</xsl:for-each>
+				<xsl:for-each select="mods:dateCreated">
+					<marc:subfield code='g'>
+						<xsl:value-of select="."/>
+					</marc:subfield>
+				</xsl:for-each>
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 <!-- Language -->	
@@ -1048,7 +1038,7 @@
 	</xsl:template>
 	
 	<!-- v3.4 Added for 337 and 338 mods:form-->
-	<xsl:template match="mods:form[@type='media']|mods:form[@type='carrier']|mods:form[@type='material']|mods:form[@type='technique']">
+	<xsl:template match="mods:form[not(@authority='gmd') and not(@authority='marcform')]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">
 				<xsl:choose>
@@ -1090,7 +1080,6 @@
 					<xsl:when test="@displayLabel='Scope and content'">2</xsl:when>
 					<xsl:when test="@displayLabel='Abstract'">2</xsl:when>
 					<xsl:when test="@displayLabel='Content advice'">4</xsl:when>
-					<xsl:otherwise><xsl:text> </xsl:text></xsl:otherwise>
 				</xsl:choose>
 			</xsl:with-param>
 			<xsl:with-param name="subfields">
@@ -1150,7 +1139,6 @@
 					<xsl:when test="@displayLabel='Interest grade level'">2</xsl:when>
 					<xsl:when test="@displayLabel='Special audience characteristics'">3</xsl:when>
 					<xsl:when test="@displayLabel='Motivation or interest level'">3</xsl:when>
-					<xsl:otherwise><xsl:text> </xsl:text></xsl:otherwise>
 				</xsl:choose>
 			</xsl:with-param>
 			<xsl:with-param name="subfields">
@@ -1208,7 +1196,8 @@
 		</xsl:call-template>
 	</xsl:template>
 	-->
-	<!-- FLVC edit: set 540 field as default when there is no @type, or some other @type -->
+	
+	<!-- FLVC edit: default to a 540 tag if there is no or other kind of @type -->
 	<xsl:template match="mods:accessCondition">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">
@@ -1497,11 +1486,7 @@
 			<xsl:value-of select="."/>
 		</marc:subfield>
 	</xsl:template>	
-	<xsl:template match="mods:subject/mods:genre">
-		<marc:subfield code="v">
-			<xsl:value-of select="."/>
-		</marc:subfield>
-	</xsl:template>
+
 	<xsl:template name="titleInfo">
 		<xsl:for-each select="mods:title">
 			<marc:subfield code="a">
@@ -2052,7 +2037,6 @@
 							<xsl:when test="@type='personal'">800</xsl:when>
 							<xsl:when test="@type='corporate'">810</xsl:when>
 							<xsl:when test="@type='conference'">811</xsl:when>
-							<xsl:otherwise>800</xsl:otherwise>
 						</xsl:choose>
 					</xsl:with-param>
 					<xsl:with-param name="subfields">
@@ -2099,29 +2083,13 @@
 
 	<xsl:template match="mods:relatedItem[not(@type)]">
 	<!-- v3 was type="related" -->
-		<!-- v3.4 updated to handle related items with only location/url child element -->
-		<xsl:choose>
-			<xsl:when test="mods:location/mods:url and not(mods:titleInfo)">
-				<xsl:call-template name="datafield">
-					<xsl:with-param name="tag">856</xsl:with-param>
-					<xsl:with-param name="ind2">2</xsl:with-param>			
-					<xsl:with-param name="subfields">
-						<marc:subfield code="u">
-							<xsl:value-of select="mods:location/mods:url"/>
-						</marc:subfield>
-					</xsl:with-param>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="datafield">
-					<xsl:with-param name="tag">787</xsl:with-param>
-					<xsl:with-param name="ind1">0</xsl:with-param>			
-					<xsl:with-param name="subfields">
-						<xsl:call-template name="relatedItem76X-78X"/>
-					</xsl:with-param>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
+		   	<xsl:call-template name="datafield">
+			<xsl:with-param name="tag">787</xsl:with-param>
+			<xsl:with-param name="ind1">0</xsl:with-param>			
+			<xsl:with-param name="subfields">
+				<xsl:call-template name="relatedItem76X-78X"/>
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 
 	<xsl:template match="mods:relatedItem[@type='preceding']">
