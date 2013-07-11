@@ -1,0 +1,97 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+  <collection xmlns="http://www.loc.gov/MARC21/slim"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.loc.gov/MARC21/slim
+http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+    <record xmlns="http://www.loc.gov/MARC21/slim"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.loc.gov/MARC21/slim
+http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+      <leader>02267nam  22003252u 4500</leader>
+      <controlfield tag="001">023859944</controlfield>
+      <controlfield tag="005">20120529150749.0</controlfield>
+      <controlfield tag="006">m        d</controlfield>
+      <controlfield tag="007">cr  n</controlfield>
+      <controlfield tag="008">120528s2011|||||||     s|||||||||||eng|d</controlfield>
+      <datafield tag="020" ind1=" " ind2=" ">
+        <subfield code="a">9780335240623</subfield>
+        <subfield code="c">47 (NL)</subfield>
+      </datafield>
+      <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(AU-PeEL)EBL915558</subfield>
+      </datafield>
+      <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">EBL915558</subfield>
+      </datafield>
+      <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(IID)CN00045678</subfield>
+      </datafield>      
+      <datafield tag="040" ind1=" " ind2=" ">
+        <subfield code="a">AU-PeEL</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="c">AU-PeEL</subfield>
+        <subfield code="d">AU-PeEL</subfield>
+      </datafield>
+      <datafield tag="050" ind1=" " ind2="4">
+        <subfield code="a">HV43</subfield>
+      </datafield>
+      <datafield tag="082" ind1="0" ind2="0">
+        <subfield code="a">361.3</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+        <subfield code="a">Trevithick, Pamela.</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+        <subfield code="a">Social Work Skills And Knowledge</subfield>
+        <subfield code="h">[electronic resource] :</subfield>
+        <subfield code="b">A practice handbook.</subfield>
+      </datafield>
+      <datafield tag="250" ind1=" " ind2=" ">
+        <subfield code="a">3rd ed.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+        <subfield code="a">Maidenhead :</subfield>
+        <subfield code="b">McGraw-Hill Education,</subfield>
+        <subfield code="c">2011.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+        <subfield code="a">1 online resource (434 p.)</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Description based upon print version of record.</subfield>
+        <subfield code="5">FTS</subfield>
+      </datafield>
+      <datafield tag="505" ind1="0" ind2=" ">
+        <subfield code="a">SOCIAL WORK SKILLS AND KNOWLEDGE : A PRACTICE HANDBOOK; Contents; Acknowledgements; PART 1: Theories and Theorists; 1 Introduction; 2 Theoretical knowledge; 3 Factual knowledge; 4 Practice knowledge; 5 Understanding human beings; PART 2: Skills and Interventions; 6 Communication, observation, listening, and assessment skills; 7 Interviewing skills; 8 Providing help, direction, and guidance; 9 Empowerment, negotiation, and partnership skills; 10 Professional competence and accountability; APPENDICES; Appendix 1: Behaviourist approaches; Appendix 2: Cognitive approaches</subfield>
+        <subfield code="5">FTS</subfield>
+      </datafield>
+      <datafield tag="505" ind1="8" ind2=" ">
+        <subfield code="a">Appendix 3: Crisis interventionAppendix 4: Ecological approach in social work; Appendix 5: Feminist perspectives in social work; Appendix 6: Motivational interviewing; Appendix 7: Person-centred approaches; Appendix 8: Psychological approaches; Appendix 9: Radical and activist perspectives in social work; Appendix 10: Strengths perspectives; Appendix 11: Task-centred approaches; Appendix 12: Stages of change (or cycle of change); References; Index;</subfield>
+        <subfield code="5">FTS</subfield>
+      </datafield>
+      <datafield tag="520" ind1=" " ind2=" ">
+        <subfield code="a">A leading text in the field of social work skills and methods, illustrating how these two are linked, with a grounding in theory and knowledge.</subfield>
+      </datafield>
+      <datafield tag="655" ind1=" " ind2="0">
+        <subfield code="a">Electronic books.</subfield>
+      </datafield>
+      <datafield tag="776" ind1="0" ind2="8">
+        <subfield code="i">Print version:</subfield>
+        <subfield code="a">Trevithick, Pamela</subfield>
+        <subfield code="t">Social Work Skills And Knowledge : A practice handbook</subfield>
+        <subfield code="d">Maidenhead : McGraw-Hill Education,c2011</subfield>
+        <subfield code="z">9780335238071</subfield>
+      </datafield>
+      <datafield tag="856" ind1="4" ind2="0">
+        <subfield code="z">Click here to view book</subfield>
+        <subfield code="u">http://www.usf.eblib.com/patron/FullRecord.aspx?p=915558</subfield>
+        <subfield code="5">FTS</subfield>
+      </datafield>
+      <datafield tag="951" ind1=" " ind2=" ">
+        <subfield code="1">10</subfield>
+        <subfield code="a">SFU01:002616795;</subfield>
+        <subfield code="5">FTS</subfield>
+      </datafield>
+    </record>
+
+</collection>  

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:marc="http://www.loc.gov/MARC21/slim"
+             xmlns="http://www.loc.gov/MARC21/slim"
+             xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+   <marc:leader>     nam  22     uu 4500</marc:leader>
+   <marc:controlfield xmlns="" tag="001">023859944</marc:controlfield>
+   <marc:controlfield xmlns="" tag="005">20120529150749.0</marc:controlfield>
+   <marc:controlfield tag="008">120528s           |||||s|||||||||||eng||</marc:controlfield>
+   <marc:datafield tag="040" ind1=" " ind2=" ">
+      <marc:subfield code="a">AU-PeEL</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="245" ind1="1" ind2="0">
+      <marc:subfield code="a">Social Work Skills And Knowledge</marc:subfield>
+      <marc:subfield code="b">A practice handbook</marc:subfield>
+      <marc:subfield code="c"/>
+      <marc:subfield code="h">electronic resource</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="700" ind1="1" ind2=" ">
+      <marc:subfield code="a">Trevithick, Pamela.</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="655" ind1=" " ind2="7">
+      <marc:subfield code="a">Electronic books.</marc:subfield>
+      <marc:subfield code="2"/>
+   </marc:datafield>
+   <marc:datafield tag="250" ind1=" " ind2=" ">
+      <marc:subfield code="a">3rd ed.</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="250" ind1=" " ind2=" ">
+      <marc:subfield code="a">monographic</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="260" ind1=" " ind2=" ">
+      <marc:subfield code="a">Maidenhead</marc:subfield>
+      <marc:subfield code="b">McGraw-Hill Education</marc:subfield>
+      <marc:subfield code="c">2011</marc:subfield>
+   </marc:datafield>
+   
+   
+      
+      
+      
+      
+      <marc:datafield tag="300" ind1=" " ind2=" ">
+      <marc:subfield code="a">1 online resource (434 p.)</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="520" ind1=" " ind2=" ">
+      <marc:subfield code="a">A leading text in the field of social work skills and methods, illustrating how these two are linked, with a grounding in theory and knowledge.</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="505" ind1="0" ind2=" ">
+      <marc:subfield code="a">SOCIAL WORK SKILLS AND KNOWLEDGE : A PRACTICE HANDBOOK; Contents; Acknowledgements; PART 1: Theories and Theorists; 1 Introduction; 2 Theoretical knowledge; 3 Factual knowledge; 4 Practice knowledge; 5 Understanding human beings; PART 2: Skills and Interventions; 6 Communication, observation, listening, and assessment skills; 7 Interviewing skills; 8 Providing help, direction, and guidance; 9 Empowerment, negotiation, and partnership skills; 10 Professional competence and accountability; APPENDICES; Appendix 1: Behaviourist approaches; Appendix 2: Cognitive approaches</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="505" ind1="0" ind2=" ">
+      <marc:subfield code="a">Appendix 3: Crisis interventionAppendix 4: Ecological approach in social work; Appendix 5: Feminist perspectives in social work; Appendix 6: Motivational interviewing; Appendix 7: Person-centred approaches; Appendix 8: Psychological approaches; Appendix 9: Radical and activist perspectives in social work; Appendix 10: Strengths perspectives; Appendix 11: Task-centred approaches; Appendix 12: Stages of change (or cycle of change); References; Index;</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="500" ind1=" " ind2=" ">
+      <marc:subfield code="a">Description based upon print version of record.</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="082" ind1="0" ind2=" ">
+      <marc:subfield code="a">361.3</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1=" " ind2=" ">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/FSU0000345.jpg</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1=" " ind2=" ">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/FSU0000345.pdf</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1=" " ind2=" ">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/123456</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1=" " ind2=" ">
+      <marc:subfield code="u">http://www.usf.eblib.com/patron/FullRecord.aspx?p=915558</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="776" ind1=" " ind2=" ">
+      <marc:subfield code="t">Social Work Skills And Knowledge : A practice handbook</marc:subfield>
+      <marc:subfield code="a">Trevithick, Pamela</marc:subfield>
+      <marc:subfield code="i">Print version:</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="020" ind1=" " ind2=" ">
+      <marc:subfield code="a">9780335240623</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(AU-PeEL)EBL915558</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">EBL915558</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(IID)CN00045678</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="050" ind1=" " ind2="2">
+      <marc:subfield code="a">HV43</marc:subfield>
+   </marc:datafield>
+</marc:record>

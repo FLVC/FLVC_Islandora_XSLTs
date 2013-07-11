@@ -1650,6 +1650,43 @@
 	</xsl:template>
 	
 <!-- Identifiers -->	
+	
+	<!-- FLVC edit to handle IID type identifiers, no-@type identifiers, and anything else not covered by a template below -->
+	<xsl:template match="mods:identifier[@type='IID'
+						or not(@type) or not(@type='doi') 
+						or not(@type='hdl') or not(@type='isbn')
+						or not(@type='isrc') or not(@type='ismn')
+						or not(@type='issn') or not(@type='issn-l')
+						or not(@type='issue number') or not(@type='lccn')
+						or not(@type='matrix number') or not(@type='music publisher')
+						or not(@type='music plate') or not(@type='sici')
+						or not(@type='stocknumber') or not(@type='')
+						or not(@type='uri') or not(@type='upc')
+						or not(@type='videorecording')				
+						]">
+		<xsl:call-template name="datafield">
+			<xsl:with-param name="tag">035</xsl:with-param>
+			<xsl:with-param name="subfields">
+				<xsl:choose>
+					<xsl:when test="@type">
+						<marc:subfield code="a">
+							<xsl:text>(</xsl:text>
+							<xsl:value-of select="@type"/>
+							<xsl:text>)</xsl:text>
+							<xsl:value-of select="."/>
+						</marc:subfield>
+					</xsl:when>
+					<xsl:otherwise>
+						<marc:subfield code="a">
+							<xsl:value-of select="."/>
+						</marc:subfield>
+					</xsl:otherwise>
+				</xsl:choose>
+
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	
 	<!-- v3.4 updated doi subfields and datafield mapping -->
 	<xsl:template match="mods:identifier[@type='doi'] | mods:identifier[@type='hdl'] ">
 		<xsl:call-template name="datafield">
@@ -1841,6 +1878,7 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
+	
 	<!--v3 location/url -->
 	<xsl:template match="mods:location[mods:url]">
 		<xsl:for-each select="mods:url">
@@ -1896,6 +1934,7 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
+	
 	<xsl:template name="authorityInd">
 		<xsl:choose>
 			<xsl:when test="@authority='lcsh'">0</xsl:when>
@@ -1988,6 +2027,7 @@
 			</xsl:with-param>
 		</xsl:call-template>		
 	</xsl:template>
+	
 	<!-- 1/04 fix -->
 	<!--<xsl:template match="mods:internetMediaType">
 		<xsl:call-template name="datafield">
