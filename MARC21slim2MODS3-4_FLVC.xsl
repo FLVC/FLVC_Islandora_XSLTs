@@ -8,6 +8,7 @@
 
 	<!-- FLVC version, written by Caitlin Nelson for the Islandora project
 		
+		v4: (7-11-2013) updated PURL handling
 		v3. (6-27-2013) merged in LOC updated 1.86; updated marc:collection handling;
 		v2: (06/2013) removed the modsCollection wrapper option - all records will just have <mods> wrappers 
 		v1: (04/2013) edits to 035 field, 260 field for punctuation, remove duplicate <dateIssued> field
@@ -2703,8 +2704,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 				</recordIdentifier>
 			</xsl:for-each>
 
-			<recordOrigin>Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl (FLVC modified version for Islandora)
-				(Revision 1.86 2013/06/10)</recordOrigin>
+			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.86 / 20130610) (FLVC v4)</recordOrigin>
 
 			<xsl:for-each select="marc:datafield[@tag=040]/marc:subfield[@code='b']">
 				<languageOfCataloging>
