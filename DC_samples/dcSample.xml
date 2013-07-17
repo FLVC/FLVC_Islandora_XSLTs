@@ -1,10 +1,16 @@
 <record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <dc:identifier>hpcollection00825.jp2</dc:identifier>
+    <dc:identifier>hpcollection00825.jpeg</dc:identifier>
+    <dc:identifier>hpcollection00825.jpg</dc:identifier>
+    <dc:identifier>hpcollection00825.pdf</dc:identifier>
+    <dc:identifier>hpcollection00825.tif</dc:identifier>
+    <dc:identifier>hpcollection00825.tiff</dc:identifier>
     <dc:identifier>(IID)FSU0004568</dc:identifier>
     <dc:identifier>http://purl.fcla.edu/fcla/dt/FSU0004568</dc:identifier>
     <dc:identifier>http://purl.fcla.edu/fcla/dt/123456</dc:identifier>
     <dc:identifier>http://www.fcla.edu</dc:identifier>
     <dc:creator>Heritage Protocol Photograph Collection</dc:creator>
+    <dc:contributor>Caitlin Nelson</dc:contributor>
     <dc:title>Wiley Housewright</dc:title>
     <dc:date>undated, circa 1970s</dc:date>
     <dc:description>Photograph by Richard Parks.</dc:description>

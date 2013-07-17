@@ -201,89 +201,91 @@
 
 <!-- ******************************* identifier ***************************** -->
     
-    <xsl:template match="dc:identifier">  
-        <xsl:if test="starts-with(text(), 'http://')">
-            <!-- <location>
-                <url>
-                    <xsl:value-of select="."/>
-                </url>
-            </location> -->
-        </xsl:if>            
+    <xsl:template match="dc:identifier">
         <xsl:variable name="iso-3166Check">
             <xsl:value-of select="substring(text(), 1, 2)"/>
         </xsl:variable>
-        <xsl:if test="not(starts-with(text(), 'http://'))">        
-            <identifier>
-                <xsl:attribute name="type">
-                    <xsl:choose>
-                        <!-- handled by location/url -->
-                        <xsl:when test="starts-with(text(), 'http://') and (not(contains(text(), $handleServer) or not(contains(substring-after(text(), 'http://'), 'hdl'))))">
-                            <xsl:text>uri</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(),'urn:hdl') or starts-with(text(),'hdl') or starts-with(text(),'http://hdl.')">
-                            <xsl:text>hdl</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(), 'doi')">
-                            <xsl:text>doi</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(), 'ark')">
-                            <xsl:text>ark</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="contains(text(), 'purl')">
-                            <xsl:text>purl</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(), 'tag')">
-                            <xsl:text>tag</xsl:text>
-                        </xsl:when>
-                        <!--NOTE:  will need to update for ISBN 13 as of January 1, 2007, see XSL tool at http://isbntools.com/ -->
-                        <xsl:when test="(starts-with(text(), 'ISBN') or starts-with(text(), 'isbn')) or ((string-length(text()) = 13) and contains(text(), '-') and (starts-with(text(), '0') or starts-with(text(), '1'))) or ((string-length(text()) = 10) and (starts-with(text(), '0') or starts-with(text(), '1')))">
-                            <xsl:text>isbn</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="(starts-with(text(), 'ISRC') or starts-with(text(), 'isrc')) or ((string-length(text()) = 12) and (contains($iso3166-1, $iso-3166Check))) or ((string-length(text()) = 15) and (contains(text(), '-') or contains(text(), '/')) and contains($iso3166-1, $iso-3166Check))">
-                            <xsl:text>isrc</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="(starts-with(text(), 'ISMN') or starts-with(text(), 'ismn')) or starts-with(text(), 'M') and ((string-length(text()) = 11) and contains(text(), '-') or string-length(text()) = 9)">
-                            <xsl:text>ismn</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="(starts-with(text(), 'ISSN') or starts-with(text(), 'issn')) or ((string-length(text()) = 9) and contains(text(), '-') or string-length(text()) = 8)">
-                            <xsl:text>issn</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(), 'ISTC') or starts-with(text(), 'istc')">
-                            <xsl:text>istc</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="(starts-with(text(), 'UPC') or starts-with(text(), 'upc')) or (string-length(text()) = 12 and not(contains(text(), ' ')) and not(contains($iso3166-1, $iso-3166Check)))">
-                            <xsl:text>upc</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="(starts-with(text(), 'SICI') or starts-with(text(), 'sici')) or ((starts-with(text(), '0') or starts-with(text(), '1')) and (contains(text(), ';') and contains(text(), '(') and contains(text(), ')') and contains(text(), '&lt;') and contains(text(), '&gt;')))">
-                            <xsl:text>sici</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="starts-with(text(), 'LCCN') or starts-with(text(), 'lccn')">
-                            <!-- probably can't do this quickly or easily without regexes and XSL 2.0 -->
-                            <xsl:text>lccn</xsl:text>
-                        </xsl:when>
-                        <!-- This grabs the contents of the () before the local id -->
-                        <xsl:when test="starts-with(text(), '(')">
-                            <xsl:value-of select="substring-before(substring-after(text(), '('),')')" />
-                        </xsl:when>
-                        <!-- no default type needed
+        <xsl:choose>
+            <xsl:when test="starts-with(text(), 'http://')">
+                <!-- This is handled by <xsl:template name="URL_location"> below -->
+            </xsl:when>
+            <xsl:when test="ends-with(text(), '.jpg') or ends-with(text(), '.jpeg') or ends-with(text(), '.jp2') or
+                ends-with(text(), '.pdf') or ends-with(text(), '.tif') or ends-with(text(), '.tiff')">
+                <!-- removes dc:identifiers with filenames in them -->
+            </xsl:when>
+            <xsl:when test="not(starts-with(text(), 'http://'))">
+                <identifier>
+                    <xsl:attribute name="type">
+                        <xsl:choose>
+                            <!-- handled by location/url -->
+                            <xsl:when test="starts-with(text(), 'http://') and (not(contains(text(), $handleServer) or not(contains(substring-after(text(), 'http://'), 'hdl'))))">
+                                <xsl:text>uri</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(),'urn:hdl') or starts-with(text(),'hdl') or starts-with(text(),'http://hdl.')">
+                                <xsl:text>hdl</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(), 'doi')">
+                                <xsl:text>doi</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(), 'ark')">
+                                <xsl:text>ark</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="contains(text(), 'purl')">
+                                <xsl:text>purl</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(), 'tag')">
+                                <xsl:text>tag</xsl:text>
+                            </xsl:when>
+                            <!--NOTE:  will need to update for ISBN 13 as of January 1, 2007, see XSL tool at http://isbntools.com/ -->
+                            <xsl:when test="(starts-with(text(), 'ISBN') or starts-with(text(), 'isbn')) or ((string-length(text()) = 13) and contains(text(), '-') and (starts-with(text(), '0') or starts-with(text(), '1'))) or ((string-length(text()) = 10) and (starts-with(text(), '0') or starts-with(text(), '1')))">
+                                <xsl:text>isbn</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(starts-with(text(), 'ISRC') or starts-with(text(), 'isrc')) or ((string-length(text()) = 12) and (contains($iso3166-1, $iso-3166Check))) or ((string-length(text()) = 15) and (contains(text(), '-') or contains(text(), '/')) and contains($iso3166-1, $iso-3166Check))">
+                                <xsl:text>isrc</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(starts-with(text(), 'ISMN') or starts-with(text(), 'ismn')) or starts-with(text(), 'M') and ((string-length(text()) = 11) and contains(text(), '-') or string-length(text()) = 9)">
+                                <xsl:text>ismn</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(starts-with(text(), 'ISSN') or starts-with(text(), 'issn')) or ((string-length(text()) = 9) and contains(text(), '-') or string-length(text()) = 8)">
+                                <xsl:text>issn</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(), 'ISTC') or starts-with(text(), 'istc')">
+                                <xsl:text>istc</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(starts-with(text(), 'UPC') or starts-with(text(), 'upc')) or (string-length(text()) = 12 and not(contains(text(), ' ')) and not(contains($iso3166-1, $iso-3166Check)))">
+                                <xsl:text>upc</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(starts-with(text(), 'SICI') or starts-with(text(), 'sici')) or ((starts-with(text(), '0') or starts-with(text(), '1')) and (contains(text(), ';') and contains(text(), '(') and contains(text(), ')') and contains(text(), '&lt;') and contains(text(), '&gt;')))">
+                                <xsl:text>sici</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="starts-with(text(), 'LCCN') or starts-with(text(), 'lccn')">
+                                <!-- probably can't do this quickly or easily without regexes and XSL 2.0 -->
+                                <xsl:text>lccn</xsl:text>
+                            </xsl:when>
+                            <!-- This grabs the contents of the () before the local id -->
+                            <xsl:when test="starts-with(text(), '(')">
+                                <xsl:value-of select="substring-before(substring-after(text(), '('),')')" />
+                            </xsl:when>
+                            <!-- no default type needed
                         <xsl:otherwise>
                             <xsl:text>local</xsl:text>
                         </xsl:otherwise> --> 
+                        </xsl:choose>
+                    </xsl:attribute>
+                    <xsl:choose>
+                        <xsl:when test="starts-with(text(),'urn:hdl') or starts-with(text(),'hdl') or starts-with(text(),$handleServer)">
+                            <xsl:value-of select="concat('hdl:',substring-after(text(),$handleServer))"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with(text(), '(')">
+                            <xsl:value-of select="substring-after(text(), ')')" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates/>
+                        </xsl:otherwise>
                     </xsl:choose>
-                </xsl:attribute>
-                <xsl:choose>
-                    <xsl:when test="starts-with(text(),'urn:hdl') or starts-with(text(),'hdl') or starts-with(text(),$handleServer)">
-                        <xsl:value-of select="concat('hdl:',substring-after(text(),$handleServer))"/>
-                    </xsl:when>
-                    <xsl:when test="starts-with(text(), '(')">
-                        <xsl:value-of select="substring-after(text(), ')')" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </identifier>
-        </xsl:if>            
+                </identifier>
+            </xsl:when>
+        </xsl:choose>        
     </xsl:template>
     
     <xsl:template name="digitool_pid">
