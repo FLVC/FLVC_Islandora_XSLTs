@@ -209,8 +209,8 @@
             <xsl:when test="starts-with(text(), 'http://')">
                 <!-- This is handled by <xsl:template name="URL_location"> below -->
             </xsl:when>
-            <xsl:when test="ends-with(text(), '.jpg') or ends-with(text(), '.jpeg') or ends-with(text(), '.jp2') or
-                ends-with(text(), '.pdf') or ends-with(text(), '.tif') or ends-with(text(), '.tiff')">
+            <xsl:when test="not(starts-with(text(), 'http://')) and (ends-with(text(), '.jpg') or ends-with(text(), '.jpeg') or ends-with(text(), '.jp2') or
+                ends-with(text(), '.pdf') or ends-with(text(), '.tif') or ends-with(text(), '.tiff'))">
                 <!-- removes dc:identifiers with filenames in them -->
             </xsl:when>
             <xsl:when test="not(starts-with(text(), 'http://'))">
