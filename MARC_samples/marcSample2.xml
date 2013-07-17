@@ -74,13 +74,23 @@
     <datafield tag="650" ind1=" " ind2="0">
       <subfield code="a">Farm life.</subfield>
     </datafield>
+    <datafield tag="" ind1=" " ind2="">
+      <subfield code=""></subfield>
+    </datafield>
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="a">United States. Agency for International Development.; Office of Agriculture and Fisheries..</subfield>
     </datafield>
     <datafield tag="700" ind1=" " ind2=" ">
-      <subfield code="a">Denver Wildlife Research Center..</subfield>
+      <subfield code="a">Denver Wildlife Research Center.</subfield>
     </datafield>
-    <datafield tag="830" ind1=" " ind2="0">
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="a">The Title of a Preceding Object</subfield>
+      <subfield code="w">PR123_889</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="a">The Title of a Succeeding Object</subfield>
+      <subfield code="w">(IID)UCF0003748</subfield>
+    </datafield>    <datafield tag="830" ind1=" " ind2="0">
       <subfield code="a">University of Florida Digital Collections.</subfield>
     </datafield>
     <datafield tag="830" ind1=" " ind2="0">

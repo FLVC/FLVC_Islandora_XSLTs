@@ -8,6 +8,7 @@
 
 	<!-- FLVC version, written by Caitlin Nelson for the Islandora project
 		
+		v5: (7-17-2013) updated relatedIdentifier to handle (parenthetical) @type
 		v4: (7-11-2013) updated PURL handling
 		v3. (6-27-2013) merged in LOC updated 1.86; updated marc:collection handling;
 		v2: (06/2013) removed the modsCollection wrapper option - all records will just have <mods> wrappers 
@@ -2877,18 +2878,45 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			</identifier>
 		</xsl:for-each>
 	</xsl:template>
+	
+	<!-- FLVC edit: now checks for @type in parens for related identifiers -->
 	<xsl:template name="relatedIdentifierLocal">
 		<xsl:for-each select="marc:subfield[@code='w']">
-			<identifier type="local">
-				<xsl:value-of select="."/>
-			</identifier>
+			<xsl:choose>
+				<xsl:when test="not(contains(text(), '(OCoLC)')) and starts-with(text(), '(')">
+					<identifier>
+						<xsl:attribute name="type">
+							<xsl:value-of select="substring-before(substring-after(., '('),')')" />
+						</xsl:attribute>
+						<xsl:value-of select="normalize-space(substring-after(., ')'))"/>
+					</identifier>
+				</xsl:when>
+				<xsl:otherwise>
+					<identifier>
+						<xsl:value-of select="."/>
+					</identifier>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
+	
 	<xsl:template name="relatedIdentifier">
 		<xsl:for-each select="marc:subfield[@code='o']">
-			<identifier>
-				<xsl:value-of select="."/>
-			</identifier>
+			<xsl:choose>
+				<xsl:when test="not(contains(text(), '(OCoLC)')) and starts-with(text(), '(')">
+					<identifier>
+						<xsl:attribute name="type">
+							<xsl:value-of select="substring-before(substring-after(., '('),')')" />
+						</xsl:attribute>
+						<xsl:value-of select="normalize-space(substring-after(., ')'))"/>
+					</identifier>
+				</xsl:when>
+				<xsl:otherwise>
+					<identifier>
+						<xsl:value-of select="."/>
+					</identifier>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 
