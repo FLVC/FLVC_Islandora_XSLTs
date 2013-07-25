@@ -1,0 +1,29 @@
+<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xmlns:flvc="info:/flvc/manifest/v1" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+    <titleInfo>
+        <title>"Floridelphia," Polk County, Florida</title>
+    </titleInfo>
+    <typeOfResource>text</typeOfResource>
+    <originInfo>
+        <issuance>monographic</issuance>
+    </originInfo>
+    <note type="statement of responsibility" altRepGroup="00"/>
+    <identifier/>
+    <identifier type="IID">FS00000072</identifier>
+    <identifier type="digitool">2853508</identifier>
+    <recordInfo>
+        <recordCreationDate encoding="marc"/>
+        <recordOrigin>
+            Converted from MARCXML to MODS version 3.4 using MARC21slim2MODS3-4.xsl (FLVC modified version for Islandora) (Revision 1.86 2013/06/10)
+        </recordOrigin>
+    </recordInfo>
+    <identifier type="fedora">fsu:3589</identifier>
+    <extension>
+        <flvc:flvc>
+            <flvc:owningInstitution>UCF</flvc:owningInstitution>
+            <flvc:submittingInstitution>FSU</flvc:submittingInstitution>
+            <flvc:objectHistory source="digitool">
+                admin_unit="FCL01", ingest_id="ing8349", creator="null:staff", creation_date="2010-12-17 17:32:48", modified_by="null:staff", modification_date="2010-12-17 17:33:13"
+            </flvc:objectHistory>
+        </flvc:flvc>
+    </extension>
+</mods>
