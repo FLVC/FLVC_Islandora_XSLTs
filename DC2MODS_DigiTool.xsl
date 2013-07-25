@@ -1181,7 +1181,7 @@
     <!-- note: not a real element, DigiTool only -->
     <xsl:template match="dc:accessRights">
         <accessCondition type="restriction on access">
-            <xsl:value-of select="dc:accessRights"/>
+            <xsl:apply-templates/>
         </accessCondition>
     </xsl:template>
     
