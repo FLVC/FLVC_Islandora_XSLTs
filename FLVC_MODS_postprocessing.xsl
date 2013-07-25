@@ -4,9 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mods="http://www.loc.gov/mods/v3"
     xmlns:flvc="info:flvc/manifest/v1"
+    xmlns:marc="http://www.loc.gov/MARC21/slim"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:dcterms="http://purl.org/dc/terms/"
-    xmlns:marc="http://www.loc.gov/MARC21/slim">
+    exclude-result-prefixes="mods dc marc">
 
 
     <!-- FLVC cleanup_mods.xsl
@@ -36,6 +37,7 @@
             xmlns:flvc="info:flvc/manifest/v1">
             <xsl:apply-templates select="node()[normalize-space()]|@*[normalize-space()]"/>
             <xsl:call-template name="newPurl"/>
+            <xsl:call-template name="typeOfResource_DTconversion"/>
         </mods:mods>
     </xsl:template>
 
@@ -72,4 +74,16 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+    <xsl:template name="typeOfResource_DTconversion">
+        <xsl:choose>
+            <xsl:when test="//mods:typeOfResource" />
+            <xsl:otherwise>
+                <typeOfResource>
+                    <xsl:value-of select="document('info.xml')/root/typeOfResource"/>
+                </typeOfResource>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
 </xsl:stylesheet>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:flvc="info:flvc/manifest/v1" xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" version="3.4">
+   <titleInfo>
+      <title>Wiley Housewright</title>
+   </titleInfo>
+   <identifier type="IID">FSU0004568</identifier>
+   <identifier type="digitool">2854792</identifier>
+   <name>
+      <namePart>Heritage Protocol Photograph Collection</namePart>
+      <role>
+         <roleTerm type="text" authority="marcrelator">creator</roleTerm>
+      </role>
+   </name>
+   <name>
+      <namePart>Caitlin Nelson</namePart>
+   </name>
+   <typeOfResource>still image</typeOfResource>
+   <originInfo>
+      <publisher>Heritage Protocol, Florida State University, Tallahassee, Florida.</publisher>
+      <publisher>Florida Virtual Campus</publisher>
+      <dateIssued keyDate="yes">undated, circa 1970s</dateIssued>
+   </originInfo>
+   <note>Photograph by Richard Parks.</note>
+   <note>B/W; aprox. 8x10 (Accession No. HP-2007-00G).</note>
+   <subject>
+      <topic>Florida State University</topic>
+   </subject>
+   <subject>
+      <topic>College of Music</topic>
+   </subject>
+   <subject>
+      <topic>Housewright, Wiley L.</topic>
+   </subject>
+   <subject>
+      <topic>Circa 1970s</topic>
+   </subject>
+   <relatedItem type="original">
+      <location>
+         <url>http://www.funnycats.com</url>
+      </location>
+      <identifier type="uri">http://www.funnycats.com</identifier>
+   </relatedItem>
+   <relatedItem>
+      <location>
+         <url>http://www.morefunnycats.com</url>
+      </location>
+      <identifier type="uri">http://www.morefunnycats.com</identifier>
+   </relatedItem>
+   <location displayLabel="purl">
+      <url>http://purl.flvc.org/fcla/dt/FSU0004568</url>
+   </location>
+   <location displayLabel="purl">
+      <url>http://purl.flvc.org/fcla/dt/123456</url>
+   </location>
+   <location>
+      <url>http://FSU0004568.pdf</url>
+   </location>
+   <location>
+      <url>http://www.fcla.edu</url>
+   </location>
+   <accessCondition>This image is the property of Florida State University. Its use is governed by U.S. and international copyright laws. To obtain a high-resolution copy of this image for a fee, please contact Florida State University Heritage Protocol.</accessCondition>
+   <accessCondition type="restriction on access">Access rights test data</accessCondition>
+</mods:mods>
