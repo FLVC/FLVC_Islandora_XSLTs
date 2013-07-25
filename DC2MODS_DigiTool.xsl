@@ -486,6 +486,17 @@
                             <xsl:text>still image</xsl:text>
                         </genre>
                     </xsl:when>
+                    <!-- FLVC edit - not controlled vocab, but will catch a lot of materials -->
+                    <xsl:when test="contains(text(),'photo') or contains(text(),'Photo')">
+                        <typeOfResource>
+                            <xsl:if test="$collection='true'">
+                                <xsl:attribute name="collection">
+                                    <xsl:text>yes</xsl:text>
+                                </xsl:attribute>
+                            </xsl:if>
+                            <xsl:text>still image</xsl:text>
+                        </typeOfResource>
+                    </xsl:when>
                     <xsl:when test="string(text()) = 'Text' or string(text()) = 'text'">
                         <typeOfResource>
                             <xsl:if test="$collection='true'">
