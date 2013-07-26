@@ -8,6 +8,7 @@
 
 	<!-- FLVC version, written by Caitlin Nelson for the Islandora project
 		
+		v6: (7-26-2013) corrected 720 name creation
 		v5: (7-17-2013) updated relatedIdentifier to handle (parenthetical) @type
 		v4: (7-11-2013) updated PURL handling
 		v3. (6-27-2013) merged in LOC updated 1.86; updated marc:collection handling;
@@ -2705,7 +2706,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 				</recordIdentifier>
 			</xsl:for-each>
 
-			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.86 / 20130610) (FLVC v4)</recordOrigin>
+			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.86 / 20130610) (FLVC v6)</recordOrigin>
 
 			<xsl:for-each select="marc:datafield[@tag=040]/marc:subfield[@code='b']">
 				<languageOfCataloging>
@@ -4434,7 +4435,9 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 	</xsl:template>
 
 	<xsl:template name="createNameFrom720">
-		<xsl:if test="marc:datafield[@tag='720'][not(marc:subfield[@code='t'])]">
+		<!-- FLVC correction: the original if test will fail because of xpath: the current node (from the for-each above) is already the 720 datafield -->
+		<!-- <xsl:if test="marc:datafield[@tag='720'][not(marc:subfield[@code='t'])]"> -->
+		<xsl:if test="not(marc:subfield[@code='t'])">
 			<name>
 				<xsl:if test="@ind1=1">
 					<xsl:attribute name="type">
