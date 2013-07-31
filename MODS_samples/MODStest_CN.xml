@@ -54,6 +54,11 @@
   <identifier type="oclc">458541050</identifier>
   <identifier type="IID">FS66750001</identifier>
   <identifier type="digitool">229491</identifier>
+  <relatedItem type="series">
+    <titleInfo>
+      <title>Juvenile Fiction</title>
+    </titleInfo>
+  </relatedItem>
   <recordInfo>
     <descriptionStandard>aacr</descriptionStandard>
     <recordContentSource authority="marcorg">FDA</recordContentSource>

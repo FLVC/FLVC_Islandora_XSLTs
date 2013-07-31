@@ -2081,11 +2081,13 @@
 		</xsl:call-template>
 	</xsl:template>
 
+	<!-- FLVC edit: 440 is obsolete, mapping now to 830 -->
 	<xsl:template match="mods:relatedItem[@type='series']">
 		<!-- v3 build series type -->
 			<xsl:for-each select="mods:titleInfo">
 				<xsl:call-template name="datafield">
-					<xsl:with-param name="tag">440</xsl:with-param>					
+					<!-- <xsl:with-param name="tag">440</xsl:with-param> -->					
+					<xsl:with-param name="tag">830</xsl:with-param>					
 					<xsl:with-param name="subfields">
 						<xsl:call-template name="titleInfo"/>
 					</xsl:with-param>

@@ -57,22 +57,17 @@
       <marc:subfield code="u">http://www.fcla.edu/Testytest</marc:subfield>
       <marc:subfield code="3">Finding Aid</marc:subfield>
    </marc:datafield>  
-  <marc:datafield tag="035" ind1=" " ind2=" ">
-      <marc:subfield code="a">(digitool)229491</marc:subfield>
-   </marc:datafield>
-  <marc:datafield tag="035" ind1=" " ind2=" ">
-      <marc:subfield code="a">(oclc)458541050</marc:subfield>
-   </marc:datafield>
+  
+  
   <marc:datafield tag="035" ind1=" " ind2=" ">
       <marc:subfield code="a">(IID)FS66750001</marc:subfield>
    </marc:datafield>
-  <marc:datafield tag="035" ind1=" " ind2=" ">
-      <marc:subfield code="a">(digitool)229491</marc:subfield>
+  
+  <marc:datafield tag="830" ind1=" " ind2=" ">
+      <marc:subfield code="a">Juvenile Fiction</marc:subfield>
    </marc:datafield>
   
-  <marc:datafield tag="035" ind1=" " ind2=" ">
-      <marc:subfield code="a">(fedora)fsu:1850</marc:subfield>
-   </marc:datafield>
+  
   <marc:datafield tag="887" ind1=" " ind2=" ">
       <marc:subfield code="a">
     
