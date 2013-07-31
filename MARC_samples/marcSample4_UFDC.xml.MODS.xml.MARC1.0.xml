@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:marc="http://www.loc.gov/MARC21/slim"
+             xmlns="http://www.loc.gov/MARC21/slim"
+             xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+   <marc:leader>     nam  22     uu 4500</marc:leader>
+   <marc:controlfield xmlns="" tag="001">UF00081178_00001</marc:controlfield>
+   <marc:controlfield xmlns="" tag="005">20090304132550.0</marc:controlfield>
+   <marc:controlfield tag="008">080317s        nyu||||js|||||||||||eng||</marc:controlfield>
+   <marc:datafield tag="040" ind1=" " ind2=" ">
+      <marc:subfield code="a">FUG</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="245" ind1="1" ind2="4">
+      <marc:subfield code="a">The Bunny stories</marc:subfield>
+      <marc:subfield code="b">for young people</marc:subfield>
+      <marc:subfield code="c">by John Howard Jewett ; with seventy-eight illustrations by Culmer Barnes.</marc:subfield>
+      <marc:subfield code="h">electronic resource</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="700" ind1="1" ind2=" ">
+      <marc:subfield code="a">Jewett, John Howard</marc:subfield>
+      <marc:subfield code="d">1843-1925</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="700" ind1="1" ind2=" ">
+      <marc:subfield code="a">Barnes, Culmer</marc:subfield>
+      <marc:subfield code="e">illustrator.</marc:subfield>
+      <marc:subfield code="4">ill</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="720" ind1=" " ind2=" ">
+      <marc:subfield code="a">Frederick A. Stokes Company</marc:subfield>
+   </marc:datafield>
+   
+   
+   <marc:datafield tag="655" ind1=" " ind2="7">
+      <marc:subfield code="a">Family stories-1892.</marc:subfield>
+      <marc:subfield code="2"/>
+   </marc:datafield>
+   <marc:datafield tag="655" ind1=" " ind2="7">
+      <marc:subfield code="a">Family stories</marc:subfield>
+      <marc:subfield code="2"/>
+   </marc:datafield>
+   <marc:datafield tag="250" ind1=" " ind2=" ">
+      <marc:subfield code="a">monographic</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="260" ind1=" " ind2=" ">
+      <marc:subfield code="a">New York</marc:subfield>
+      <marc:subfield code="b">Frederick A. Stokes Company</marc:subfield>
+      <marc:subfield code="c">1892</marc:subfield>
+   </marc:datafield>
+   
+   
+      
+      
+      
+      
+      
+      <marc:datafield tag="300" ind1=" " ind2=" ">
+      <marc:subfield code="a">210 p. : ill. ; 22 cm.</marc:subfield>
+   </marc:datafield>
+   
+   <marc:datafield tag="520" ind1=" " ind2=" ">
+      <marc:subfield code="a">Stories about the happy, home-sheltered Bunny Family of Runwild Terrace.</marc:subfield>
+   </marc:datafield>
+   
+   
+   <marc:datafield tag="500" ind1=" " ind2=" ">
+      <marc:subfield code="a">Bound in green cloth; stamped in red, white, rust, silver, and gold.</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="500" ind1=" " ind2=" ">
+      <marc:subfield code="a">Electronic reproduction. Gainesville, Fla. : University of Florida, George A. Smathers Libraries, 2008. (University of Florida Digital Collections) (Children's Literature) Mode of access: World Wide Web. System requirements: Internet connectivity; Web browser software.</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Children</marc:subfield>
+      <marc:subfield code="x">Conduct of life</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Conduct of life</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Rabbits</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Animals</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Brothers and sisters</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Parent and child</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Cousins</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Children with disabilities</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Play</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Amusements</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
+   
+      
+   
+   <marc:datafield tag="852" ind1=" " ind2=" ">
+      <marc:subfield code="a">SUS01:;:;: UFDC</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/FSU0000345.jpg</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/FSU0000345.pdf</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://purl.flvc.org/fsu/fd/123456</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://ufdc.ufl.edu/UF00081178</marc:subfield>
+      <marc:subfield code="3">Electronic Resource</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="776" ind1=" " ind2=" ">
+      <marc:subfield code="o">(OCoLC)00565106</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="440" ind1=" " ind2=" ">
+      <marc:subfield code="a">University of Florida Digital Collections</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="440" ind1=" " ind2=" ">
+      <marc:subfield code="a">Children's Literature</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="010" ind1=" " ind2=" ">
+      <marc:subfield code="a">01001305</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">002232194</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">ALH2586</marc:subfield>
+   </marc:datafield>
+   
+   
+</marc:record>

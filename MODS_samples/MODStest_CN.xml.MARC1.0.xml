@@ -41,6 +41,10 @@
   <marc:datafield tag="650" ind1="1" ind2=" ">
       <marc:subfield code="a">Children's poetry</marc:subfield>
    </marc:datafield>
+  <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">History</marc:subfield>
+      <marc:subfield code="v">Juvenile fiction</marc:subfield>
+   </marc:datafield>
   <marc:datafield tag="856" ind1="4" ind2="0">
       <marc:subfield code="u">http://purl.fcla.edu/fcla/dl/FS66750001.jpg</marc:subfield>
       <marc:subfield code="3">Electronic resource (JPEG)</marc:subfield>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <leader>01900nam  22004933a 4500</leader>
+    <controlfield tag="001">UF00081178_00001</controlfield>
+    <controlfield tag="005">20090304132550.0</controlfield>
+    <controlfield tag="006">m                 </controlfield>
+    <controlfield tag="007">cr       ma mp</controlfield>
+    <controlfield tag="008">080317s1892    nyua   js     000 f eng d</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">01001305</subfield>
+    </datafield>
+    <datafield tag="035" ind1="9" ind2=" ">
+      <subfield code="a">002232194</subfield>
+      <subfield code="b">UF</subfield>
+    </datafield>
+    <datafield tag="035" ind1="9" ind2=" ">
+      <subfield code="a">ALH2586</subfield>
+      <subfield code="b">UF</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">FUG</subfield>
+      <subfield code="c">FUG</subfield>
+    </datafield>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Jewett, John Howard,</subfield>
+      <subfield code="d">1843-1925.</subfield>
+    </datafield>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The Bunny stories</subfield>
+      <subfield code="h">[electronic resource]</subfield>
+      <subfield code="b">for young people  /</subfield>
+      <subfield code="c">by John Howard Jewett ; with seventy-eight illustrations by Culmer Barnes.</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">New York :</subfield>
+      <subfield code="b">Frederick A. Stokes Company</subfield>
+      <subfield code="c">1892.</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">210 p. :</subfield>
+      <subfield code="b">ill. ;</subfield>
+      <subfield code="c">22 cm.</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">Bound in green cloth; stamped in red, white, rust, silver, and gold.</subfield>
+    </datafield>
+    <datafield tag="520" ind1=" " ind2=" ">
+      <subfield code="a">Stories about the happy, home-sheltered Bunny Family of Runwild Terrace.</subfield>
+    </datafield>
+    <datafield tag="533" ind1=" " ind2=" ">
+      <subfield code="a">Electronic reproduction.</subfield>
+      <subfield code="b">Gainesville, Fla. :</subfield>
+      <subfield code="c">University of Florida, George A. Smathers Libraries,</subfield>
+      <subfield code="d">2008.</subfield>
+      <subfield code="f">(University of Florida Digital Collections)</subfield>
+      <subfield code="f">(Children's Literature)</subfield>
+      <subfield code="n">Mode of access: World Wide Web.</subfield>
+      <subfield code="n">System requirements: Internet connectivity; Web browser software.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Children</subfield>
+      <subfield code="x">Conduct of life</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Conduct of life</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Rabbits</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Animals</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Brothers and sisters</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Parent and child</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Cousins</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Children with disabilities</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Play</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Amusements</subfield>
+      <subfield code="v">Juvenile fiction.</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="9">
+      <subfield code="a">Family stories</subfield>
+      <subfield code="y">1892.</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="9">
+      <subfield code="a">Family stories</subfield>
+    </datafield>
+    <datafield tag="690" ind1=" " ind2=" ">
+      <subfield code="a">Bldn</subfield>
+      <subfield code="y">1892.</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Barnes, Culmer,</subfield>
+      <subfield code="e">illustrator.</subfield>
+      <subfield code="4">ill</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Frederick A. Stokes Company.</subfield>
+      <subfield code="4">pbl</subfield>
+    </datafield>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">New York</subfield>
+      <subfield code="d">New York.</subfield>
+    </datafield>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="c">Original</subfield>
+      <subfield code="w">(OCoLC)00565106</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">University of Florida Digital Collections.</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Children's Literature.</subfield>
+    </datafield>
+    <datafield tag="852" ind1=" " ind2=" ">
+      <subfield code="a">SUS01:;:;:</subfield>
+      <subfield code="b">UFDC</subfield>
+      <subfield code="c">JUV</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2="0">
+      <subfield code="u">http://ufdc.ufl.edu/UF00081178</subfield>
+      <subfield code="y">Electronic Resource</subfield>
+    </datafield>
+    <datafield tag="992" ind1="0" ind2="4">
+      <subfield code="a">http://ufdcimages.uflib.ufl.edu/UF/00/08/11/78/00001/00001thm.jpg</subfield>
+    </datafield>
+    <datafield tag="997" ind1=" " ind2=" ">
+      <subfield code="a">Children's Literature</subfield>
+    </datafield>
+  </record>
+</collection>
