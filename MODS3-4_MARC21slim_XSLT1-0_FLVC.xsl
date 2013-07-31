@@ -579,7 +579,8 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role-->
-	<xsl:template match="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='text']='creator']">
+	<!-- FLVC edit: MARC-to-MODS will 100, 110, or 111 will map with @usage="primary" so we look for that in the round-trip back to tag="1XX" -->
+	<xsl:template match="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='text']='creator'] | mods:name[@type='personal' and @usage='primary']">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">100</xsl:with-param>
 			<xsl:with-param name="ind1">1</xsl:with-param>
@@ -623,7 +624,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role -->
-	<xsl:template match="mods:name[@type='corporate'][mods:role/mods:roleTerm[@type='text']='creator']">
+	<xsl:template match="mods:name[@type='corporate'][mods:role/mods:roleTerm[@type='text']='creator'] | mods:name[@type='corporate' and @usage='primary']">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">110</xsl:with-param>
 			<xsl:with-param name="ind1">2</xsl:with-param>
@@ -656,7 +657,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role -->
-	<xsl:template match="mods:name[@type='conference'][mods:role/mods:roleTerm[@type='text']='creator']">
+	<xsl:template match="mods:name[@type='conference'][mods:role/mods:roleTerm[@type='text']='creator'] | mods:name[@type='conference' and @usage='primary']">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">111</xsl:with-param>
 			<xsl:with-param name="ind1">2</xsl:with-param>
@@ -674,7 +675,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role -->
-	<xsl:template match="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
+	<xsl:template match="mods:name[@type='personal' and not(@usage='primary')][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">700</xsl:with-param>
 			<xsl:with-param name="ind1">1</xsl:with-param>
@@ -713,7 +714,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role -->
-	<xsl:template match="mods:name[@type='corporate'][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
+	<xsl:template match="mods:name[@type='corporate' and not(@usage='primary')][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">710</xsl:with-param>
 			<xsl:with-param name="ind1">2</xsl:with-param>
@@ -744,7 +745,7 @@
 		</xsl:call-template>	
 	</xsl:template>
 	<!-- v3 role -->
-	<xsl:template match="mods:name[@type='conference'][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
+	<xsl:template match="mods:name[@type='conference' and not(@usage='primary')][mods:role/mods:roleTerm[@type='text']!='creator' or not(mods:role)]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">711</xsl:with-param>
 			<xsl:with-param name="ind1">2</xsl:with-param>

@@ -16,7 +16,7 @@
       <marc:subfield code="c">by John Howard Jewett ; with seventy-eight illustrations by Culmer Barnes.</marc:subfield>
       <marc:subfield code="h">electronic resource</marc:subfield>
    </marc:datafield>
-   <marc:datafield tag="700" ind1="1" ind2=" ">
+   <marc:datafield tag="100" ind1="1" ind2=" ">
       <marc:subfield code="a">Jewett, John Howard</marc:subfield>
       <marc:subfield code="d">1843-1925</marc:subfield>
    </marc:datafield>
