@@ -1652,17 +1652,18 @@
 <!-- Identifiers -->	
 	
 	<!-- FLVC edit to handle IID type identifiers, no-@type identifiers, and anything else not covered by a template below -->
-	<xsl:template match="mods:identifier[@type='IID'
-						or not(@type) or not(@type='doi') 
-						or not(@type='hdl') or not(@type='isbn')
-						or not(@type='isrc') or not(@type='ismn')
-						or not(@type='issn') or not(@type='issn-l')
-						or not(@type='issue number') or not(@type='lccn')
-						or not(@type='matrix number') or not(@type='music publisher')
-						or not(@type='music plate') or not(@type='sici')
-						or not(@type='stocknumber') or not(@type='')
-						or not(@type='uri') or not(@type='upc')
-						or not(@type='videorecording')				
+	<xsl:template match="mods:identifier[@type='IID' or 
+						( not(@type) and not(@type='doi') 
+						and not(@type='hdl') and not(@type='isbn')
+						and not(@type='isrc') and not(@type='ismn')
+						and not(@type='issn') and not(@type='issn-l')
+						and not(@type='issue number') and not(@type='lccn')
+						and not(@type='matrix number') and not(@type='music publisher')
+						and not(@type='music plate') and not(@type='sici')
+						and not(@type='stocknumber') and not(@type='')
+						and not(@type='uri') and not(@type='upc')
+						and not(@type='videorecording')
+						)
 						]">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">035</xsl:with-param>
