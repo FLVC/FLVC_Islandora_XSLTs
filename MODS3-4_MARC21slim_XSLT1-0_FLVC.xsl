@@ -1880,10 +1880,13 @@
 	</xsl:template>
 	
 	<!--v3 location/url -->
+	<!-- FLVC edit: added proper indicators -->
 	<xsl:template match="mods:location[mods:url]">
 		<xsl:for-each select="mods:url">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">856</xsl:with-param>
+			<xsl:with-param name="ind1">4</xsl:with-param>
+			<xsl:with-param name="ind2">0</xsl:with-param>
 			<xsl:with-param name="subfields">
 				<marc:subfield code="u">
 					<xsl:value-of select="."/>
@@ -1903,6 +1906,7 @@
 			</xsl:call-template>
 		</xsl:for-each>
 	</xsl:template>
+	
 	<xsl:template match="mods:identifier[@type='upc']">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">024</xsl:with-param>
