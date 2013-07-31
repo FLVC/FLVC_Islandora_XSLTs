@@ -1,0 +1,36 @@
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:flvc="info:flvc/manifest/v1" xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" version="3.4">
+<titleInfo>
+<title>Big Apple Circus poster</title>
+</titleInfo>
+<identifier>OS-53</identifier>
+<identifier type="digitool">3159325</identifier>
+<originInfo>
+<dateIssued keyDate="yes">(1990?)</dateIssued>
+</originInfo>
+<language>
+<languageTerm type="text">English</languageTerm>
+</language>
+<relatedItem>
+<titleInfo>
+<title>Part of the Sayre Circus Collection</title>
+</titleInfo>
+</relatedItem>
+<location displayLabel="purl">
+<url>http://purl.flvc.org/fcla/dt/3159325</url>
+</location>
+<accessCondition>
+Digital reproductions are provided for non-commercial, personal, educational, and research use only. All other use, including but not limited to commercial or scholarly reproductions, redistribution, publication, websites, exhibitions, broadcasts, or other transmission, whether by electronic means or otherwise, without prior written permission of the copyright holder is strictly prohibited. For information about the copyright and reproduction rights for this item, please contact the Associate Director for Special Collections and Archives.
+</accessCondition>
+<typeOfResource>still image</typeOfResource>
+<identifier type="IID">FSDT3159325</identifier>
+<identifier type="fedora">fsu:675</identifier>
+<extension>
+<flvc:flvc>
+<flvc:owningInstitution>FSU</flvc:owningInstitution>
+<flvc:submittingInstitution>FSU</flvc:submittingInstitution>
+<flvc:objectHistory source="digitool">
+admin_unit="FSU01", ingest_id="ing9322", creator="creator:PSMITH", creation_date="2011-04-15 16:36:32", modified_by="super:TWEATHER", modification_date="2011-08-24 13:23:55"
+</flvc:objectHistory>
+</flvc:flvc>
+</extension>
+</mods>

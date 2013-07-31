@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marc:record xmlns:marc="http://www.loc.gov/MARC21/slim">
+     <marc:leader> nkm 22 uu 4500</marc:leader>
+     <marc:controlfield tag="008"> s ||||||||||||||||||||||</marc:controlfield>
+     <marc:datafield tag="245" ind1="1" ind2="0">
+          <marc:subfield code="a">Big Apple Circus poster</marc:subfield>
+     </marc:datafield>
+     <marc:datafield tag="260" ind1=" " ind2=" ">
+          <marc:subfield code="c">(1990?)</marc:subfield>
+     </marc:datafield>
+     <marc:datafield tag="787" ind1="0" ind2=" ">
+          <marc:subfield code="t">Part of the Sayre Circus Collection</marc:subfield>
+     </marc:datafield>
+     <marc:datafield tag="856" ind1=" " ind2=" ">
+          <marc:subfield code="u">http://purl.flvc.org/fcla/dt/3159325</marc:subfield>
+     </marc:datafield>
+     <marc:datafield tag="" ind1=" " ind2=" ">
+          <marc:subfield code="a">Digital reproductions are provided for non-commercial, personal,
+               educational, and research use only. All other use, including but not limited to
+               commercial or scholarly reproductions, redistribution, publication, websites,
+               exhibitions, broadcasts, or other transmission, whether by electronic means or
+               otherwise, without prior written permission of the copyright holder is strictly
+               prohibited. For information about the copyright and reproduction rights for this
+               item, please contact the Associate Director for Special Collections and
+               Archives.</marc:subfield>
+     </marc:datafield>
+
+     <marc:datafield tag="887" ind1=" " ind2=" ">
+          <marc:subfield code="a"> FSU FSU admin_unit="FSU01", ingest_id="ing9322",
+               creator="creator:PSMITH", creation_date="2011-04-15 16:36:32",
+               modified_by="super:TWEATHER", modification_date="2011-08-24 13:23:55"
+          </marc:subfield>
+     </marc:datafield>
+</marc:record>

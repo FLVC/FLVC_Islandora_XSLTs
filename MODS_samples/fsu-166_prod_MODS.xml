@@ -1,0 +1,43 @@
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:flvc="info:flvc/manifest/v1" xmlns:dcterms="http://purl.org/dc/terms/" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" version="3.4">
+<titleInfo>
+<title>$10 note, 1862 (back)</title>
+</titleInfo>
+<identifier>MSS 0-72, Confederate Money, box 141</identifier>
+<identifier type="digitool">2854823</identifier>
+<name>
+<namePart>Confederate States of America</namePart>
+<role>
+<roleTerm type="text" authority="marcrelator">creator</roleTerm>
+</role>
+</name>
+<originInfo>
+<publisher>
+Digital Library Center, Florida State University Libraries
+</publisher>
+<dateIssued keyDate="yes">December 2, 1862</dateIssued>
+</originInfo>
+<note>Back of note with serial number 88622-B</note>
+<relatedItem>
+<titleInfo>
+<title>www.american-south.org</title>
+</titleInfo>
+</relatedItem>
+<location displayLabel="purl">
+<url>http://purl.flvc.org/fcla/dt/2854823</url>
+</location>
+<accessCondition>
+Digital reproductions are provided for non-commercial, personal, educational, and research use only. All other use, including but not limited to commercial or scholarly reproductions, redistribution, publication, websites, exhibitions, broadcasts, or other transmission, whether by electronic means or otherwise, without prior written permission of the copyright holder is strictly prohibited. For information about the copyright and reproduction rights for this item, please contact the Associate Director for Special Collections and Archives.
+</accessCondition>
+<typeOfResource>still image</typeOfResource>
+<identifier type="IID">FSDT2854823</identifier>
+<identifier type="fedora">fsu:166</identifier>
+<extension>
+<flvc:flvc>
+<flvc:owningInstitution>FSU</flvc:owningInstitution>
+<flvc:submittingInstitution>FSU</flvc:submittingInstitution>
+<flvc:objectHistory source="digitool">
+admin_unit="FSU01", ingest_id="ing8383", creator="creator:PSMITH", creation_date="2010-12-21 16:46:50", modified_by="super:TWEATHER", modification_date="2011-04-08 09:27:26"
+</flvc:objectHistory>
+</flvc:flvc>
+</extension>
+</mods>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:marc="http://www.loc.gov/MARC21/slim"
+             xmlns="http://www.loc.gov/MARC21/slim"
+             xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+   <marc:leader>     nam  22     uu 4500</marc:leader>
+   <marc:controlfield xmlns="" tag="001">002589789</marc:controlfield>
+   <marc:controlfield xmlns="" tag="005">20091023081156.0</marc:controlfield>
+   <marc:controlfield tag="008">091023|1894    ilu||||js|||||||||||eng||</marc:controlfield>
+   <marc:datafield tag="040" ind1=" " ind2=" ">
+      <marc:subfield code="a">FDA</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="245" ind1="1" ind2="0">
+      <marc:subfield code="a">Gee whoa!</marc:subfield>
+      <marc:subfield code="h">electronic resource</marc:subfield>
+   </marc:datafield>
+  
+  <marc:datafield tag="250" ind1=" " ind2=" ">
+      <marc:subfield code="a">monographic</marc:subfield>
+   </marc:datafield>
+   <marc:datafield tag="260" ind1=" " ind2=" ">
+      <marc:subfield code="a">Chicago</marc:subfield>
+      <marc:subfield code="b">W.B. Conkey Co.</marc:subfield>
+      <marc:subfield code="c">c1894</marc:subfield>
+      <marc:subfield code="c">1894</marc:subfield>
+   </marc:datafield>
+  
+  
+    
+    
+    
+    
+    <marc:datafield tag="300" ind1=" " ind2=" ">
+      <marc:subfield code="a">1 online resource ([15] p.) : chiefly ill. (some col.)</marc:subfield>
+   </marc:datafield>
+  
+  
+  <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Children's stories</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="650" ind1="1" ind2=" ">
+      <marc:subfield code="a">Children's poetry</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://purl.fcla.edu/fcla/dl/FS66750001.jpg</marc:subfield>
+      <marc:subfield code="3">Electronic resource (JPEG)</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://purl.fcla.edu/fcla/dl/FS66750001.pdf</marc:subfield>
+      <marc:subfield code="3">Electronic resource (PDF)</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="856" ind1="4" ind2="0">
+      <marc:subfield code="u">http://www.fcla.edu/Testytest</marc:subfield>
+      <marc:subfield code="3">Finding Aid</marc:subfield>
+   </marc:datafield>  
+  <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(digitool)229491</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(oclc)458541050</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(IID)FS66750001</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(digitool)229491</marc:subfield>
+   </marc:datafield>
+  
+  <marc:datafield tag="035" ind1=" " ind2=" ">
+      <marc:subfield code="a">(fedora)fsu:1850</marc:subfield>
+   </marc:datafield>
+  <marc:datafield tag="887" ind1=" " ind2=" ">
+      <marc:subfield code="a">
+    
+      FSU
+      FSU
+      admin_unit="FCL01", ingest_id="ing4319",
+        creator="null:staff", creation_date="2009-09-25 18:19:27", modified_by="super:TWEATHER",
+        modification_date="2011-02-03 14:23:32"
+    
+  </marc:subfield>
+   </marc:datafield>
+</marc:record>
