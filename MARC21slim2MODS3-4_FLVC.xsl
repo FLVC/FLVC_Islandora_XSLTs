@@ -8,6 +8,7 @@
 
 	<!-- FLVC version, written by Caitlin Nelson for the Islandora project
 		
+		v7: (8-02-2012) edited <dateIssued> fields for de-duping
 		v6: (7-26-2013) corrected 720 name creation
 		v5: (7-17-2013) updated relatedIdentifier to handle (parenthetical) @type
 		v4: (7-11-2013) updated PURL handling
@@ -634,6 +635,20 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		<!-- originInfo 250 and 260 -->
 
 		<originInfo>
+			
+			<xsl:variable name="dataField260c">
+				<xsl:call-template name="chopPunctuation">
+					<xsl:with-param name="chopString"
+						select="marc:datafield[@tag=260]/marc:subfield[@code='c']"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:variable name="controlField008-7-10"
+				select="normalize-space(substring($controlField008, 8, 4))"/>
+			<xsl:variable name="controlField008-11-14"
+				select="normalize-space(substring($controlField008, 12, 4))"/>
+			<xsl:variable name="controlField008-6"
+				select="normalize-space(substring($controlField008, 7, 1))"/>
+			
 			<xsl:call-template name="scriptCode"/>
 			<xsl:for-each
 				select="marc:datafield[(@tag=260 or @tag=250) and marc:subfield[@code='a' or code='b' or @code='c' or code='g']]">
@@ -735,6 +750,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 							</xsl:call-template>
 						</publisher>
 					</xsl:when>
+					
 					<xsl:when test="(@code='c')">
 						<xsl:if test="$leader6='d' or $leader6='f' or $leader6='p' or $leader6='t'">
 							<dateCreated>
@@ -743,9 +759,11 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 								</xsl:call-template>
 							</dateCreated>
 						</xsl:if>
-
+              
+			<!-- FLVC edit: there are so many statements to create a <dateIssued>... I added a check to see if the pub-date matches the 008 date to 
+				stop duplication of <dateIssued> field -->
 						<xsl:if
-							test="not($leader6='d' or $leader6='f' or $leader6='p' or $leader6='t')">
+							test="not($leader6='d' or $leader6='f' or $leader6='p' or $leader6='t') and ($dataField260c != $controlField008-7-10)">
 							<dateIssued>
 								<xsl:call-template name="chopPunctuation">
 									<xsl:with-param name="chopString" select="."/>
@@ -753,6 +771,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 							</dateIssued>
 						</xsl:if>
 					</xsl:when>
+					
 					<xsl:when test="@code='g'">
 						<xsl:if test="$leader6='d' or $leader6='f' or $leader6='p' or $leader6='t'">
 							<dateCreated>
@@ -768,18 +787,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 					</xsl:when>
 				</xsl:choose>
 			</xsl:for-each>
-			<xsl:variable name="dataField260c">
-				<xsl:call-template name="chopPunctuation">
-					<xsl:with-param name="chopString"
-						select="marc:datafield[@tag=260]/marc:subfield[@code='c']"/>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:variable name="controlField008-7-10"
-				select="normalize-space(substring($controlField008, 8, 4))"/>
-			<xsl:variable name="controlField008-11-14"
-				select="normalize-space(substring($controlField008, 12, 4))"/>
-			<xsl:variable name="controlField008-6"
-				select="normalize-space(substring($controlField008, 7, 1))"/>
+			
 
 
 
@@ -839,17 +847,13 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 
 
 			<!-- tmee 1.77 008-06 dateIssued for value 's' -->
-			<!-- FLVC commented this out - I believe this does essentially the same thing as the second if statement above
-				and is creating a duplicate <dateIssued> field -->
-			<!-- <xsl:if test="$controlField008-6='s'">
+			<xsl:if test="$controlField008-6='s'">
 				<xsl:if test="$controlField008-7-10">
 					<dateIssued encoding="marc">
 						<xsl:value-of select="$controlField008-7-10"/>
 					</dateIssued>
 				</xsl:if>
-			</xsl:if> -->
-
-
+			</xsl:if>
 
 			<xsl:if test="$controlField008-6='t'">
 				<xsl:if test="$controlField008-11-14">
@@ -2706,7 +2710,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 				</recordIdentifier>
 			</xsl:for-each>
 
-			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.86 / 20130610) (FLVC v6)</recordOrigin>
+			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.86 / 20130610) (FLVC v7)</recordOrigin>
 
 			<xsl:for-each select="marc:datafield[@tag=040]/marc:subfield[@code='b']">
 				<languageOfCataloging>

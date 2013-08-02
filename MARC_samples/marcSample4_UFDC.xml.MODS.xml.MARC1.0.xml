@@ -6,7 +6,7 @@
    <marc:leader>     nam  22     uu 4500</marc:leader>
    <marc:controlfield xmlns="" tag="001">UF00081178_00001</marc:controlfield>
    <marc:controlfield xmlns="" tag="005">20090304132550.0</marc:controlfield>
-   <marc:controlfield tag="008">080317s        nyu||||js|||||||||||eng||</marc:controlfield>
+   <marc:controlfield tag="008">080317s1892    nyu||||js|||||||||||eng||</marc:controlfield>
    <marc:datafield tag="040" ind1=" " ind2=" ">
       <marc:subfield code="a">FUG</marc:subfield>
    </marc:datafield>
@@ -131,10 +131,10 @@
    <marc:datafield tag="776" ind1=" " ind2=" ">
       <marc:subfield code="o">(OCoLC)00565106</marc:subfield>
    </marc:datafield>
-   <marc:datafield tag="440" ind1=" " ind2=" ">
+   <marc:datafield tag="830" ind1=" " ind2=" ">
       <marc:subfield code="a">University of Florida Digital Collections</marc:subfield>
    </marc:datafield>
-   <marc:datafield tag="440" ind1=" " ind2=" ">
+   <marc:datafield tag="830" ind1=" " ind2=" ">
       <marc:subfield code="a">Children's Literature</marc:subfield>
    </marc:datafield>
    <marc:datafield tag="010" ind1=" " ind2=" ">
@@ -146,6 +146,5 @@
    <marc:datafield tag="035" ind1=" " ind2=" ">
       <marc:subfield code="a">ALH2586</marc:subfield>
    </marc:datafield>
-   
    
 </marc:record>
