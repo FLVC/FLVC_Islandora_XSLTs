@@ -7,7 +7,7 @@
   <titleInfo>
     <title>Gee whoa!</title>
   </titleInfo>
-  <typeOfResource>text</typeOfResource>
+  <!-- <typeOfResource>text</typeOfResource> -->
   <originInfo>
     <place>
       <placeTerm type="code" authority="marccountry">ilu</placeTerm>
@@ -41,7 +41,7 @@
     <topic>History</topic>
     <genre>Juvenile fiction</genre>
   </subject>
-  <location displayLabel="purl">
+  <!-- <location displayLabel="purl">
     <url displayLabel="Electronic resource (JPEG)" usage="primary display">http://purl.fcla.edu/fcla/dl/FS66750001.jpg</url>
   </location>
   <location displayLabel="purl">
@@ -49,7 +49,7 @@
   </location>
   <location>
     <url displayLabel="Finding Aid">http://www.fcla.edu/Testytest</url>
-  </location>  
+  </location> -->
   <identifier type="digitool">229491</identifier>
   <identifier type="oclc">458541050</identifier>
   <identifier type="IID">FS66750001</identifier>

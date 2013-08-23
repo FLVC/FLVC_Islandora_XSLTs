@@ -79,9 +79,11 @@
         <xsl:choose>
             <xsl:when test="//mods:typeOfResource" />
             <xsl:otherwise>
-                <typeOfResource>
-                    <xsl:value-of select="document('info.xml')/root/typeOfResource"/>
-                </typeOfResource>
+                <xsl:if test="document('info.xml')/root/typeOfResource">
+                    <typeOfResource>
+                        <xsl:value-of select="document('info.xml')/root/typeOfResource"/>
+                    </typeOfResource>
+                </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
