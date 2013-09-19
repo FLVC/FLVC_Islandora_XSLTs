@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:dcterms="http://purl.org/dc/terms/"
@@ -83,7 +83,7 @@
         
         <!-- identifier -->
         <xsl:apply-templates select="dc:identifier"/>
-        <xsl:call-template name="digitool_pid"/> <!-- digitool conversion only -->
+        <!-- <xsl:call-template name="digitool_pid"/> digitool conversion only -->
         
         <!-- name -->
         <xsl:apply-templates select="dc:creator"/>
@@ -172,7 +172,7 @@
         <!-- access condition -->
         <xsl:apply-templates select="dc:rights"/>
         <xsl:apply-templates select="dcterms:accessRights"/>
-        <xsl:apply-templates select="dc:accessRights"/> <!-- normalization for DigiTool -->
+        <!-- <xsl:apply-templates select="dc:accessRights"/> normalization for DigiTool materials only -->
         <xsl:apply-templates select="dcterms:license"/>
         
         
