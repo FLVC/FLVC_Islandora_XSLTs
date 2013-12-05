@@ -245,6 +245,9 @@
 			<xsl:if test="mods:genre[@authority='marc']='globe'">
 				<marc:controlfield tag="007">d|||||</marc:controlfield>
 			</xsl:if>
+
+
+
 			<marc:controlfield tag="008">
 				<xsl:variable name="typeOf008"><xsl:apply-templates mode="ctrl008" select="mods:typeOfResource"/></xsl:variable>
 				<!-- 00-05 -->	
@@ -271,7 +274,8 @@
 					<xsl:when test="mods:originInfo/mods:copyrightDate">s</xsl:when>
 					<xsl:otherwise>|</xsl:otherwise>
 				</xsl:choose>						
-				<!-- 07-14          -->
+				
+				<!-- 07-14    Date1 and Date2      -->
 				<!-- 07-10 -->
 				<xsl:choose>
 					<xsl:when test="mods:originInfo/mods:dateIssued[@point='start' and @encoding='marc']">
@@ -280,8 +284,18 @@
 					<xsl:when test="mods:originInfo/mods:dateIssued[@encoding='marc']">
 						<xsl:value-of select="mods:originInfo/mods:dateIssued[@encoding='marc']"/>
 					</xsl:when>
-                                        <xsl:when test="mods:originInfo/mods:dateIssued">
-                                                <xsl:value-of select="substring(mods:originInfo/mods:dateIssued,1,4)"/>				                                </xsl:when>
+                                        <xsl:when 
+test="string(number(mods:originInfo/mods:dateIssued)) != 'NaN'">
+                                                <xsl:value-of select="substring(mods:originInfo/mods:dateIssued,1,4)"/>				                                                        </xsl:when>
+                                        <xsl:when test="mods:originInfo/mods:dateCreated[@point='start' and @encoding='marc']">
+						<xsl:value-of select="mods:originInfo/mods:dateCreated[@point='start' and @encoding='marc']"/>
+					</xsl:when>
+					<xsl:when test="mods:originInfo/mods:dateCreated[@encoding='marc']">
+						<xsl:value-of select="mods:originInfo/mods:dateCreated[@encoding='marc']"/>
+					</xsl:when>
+                                        <xsl:when 
+test="string(number(mods:originInfo/mods:dateCreated)) != 'NaN'">
+                                                <xsl:value-of select="substring(mods:originInfo/mods:dateCreated,1,4)"/>				                                                        </xsl:when>
 					<xsl:otherwise>					
 						<xsl:text>    </xsl:text>
 					</xsl:otherwise>
@@ -291,8 +305,15 @@
 					<xsl:when test="mods:originInfo/mods:dateIssued[@point='end' and @encoding='marc']">
 						<xsl:value-of select="mods:originInfo/mods:dateIssued[@point='end' and @encoding='marc']"/>
 					</xsl:when>	
-                                        <xsl:when test="mods:originInfo/mods:dateIssued[@point='end']">
+                                        <xsl:when 
+test="string(number(mods:originInfo/mods:dateIssued[@point='end'])) != 'NaN'">
                                                 <xsl:value-of select="substring(mods:originInfo/mods:dateIssued[@point='end'],1,4)"/>				                </xsl:when>
+                                        <xsl:when test="mods:originInfo/mods:dateCreated[@point='end' and @encoding='marc']">
+						<xsl:value-of select="mods:originInfo/mods:dateCreated[@point='end' and @encoding='marc']"/>
+					</xsl:when>	
+                                        <xsl:when 
+test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
+                                                <xsl:value-of select="substring(mods:originInfo/mods:dateCreated[@point='end'],1,4)"/>				                                                </xsl:when>
 					<xsl:otherwise>
 						<xsl:text>    </xsl:text>
 					</xsl:otherwise>
