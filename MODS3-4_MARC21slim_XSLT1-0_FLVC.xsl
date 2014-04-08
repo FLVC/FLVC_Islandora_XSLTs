@@ -940,7 +940,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
                     
                     <xsl:with-param name="ind1" select="number(boolean((//mods:name/mods:role/mods:roleTerm[@type='text']='creator' or //mods:name/mods:role/mods:roleTerm[@type='code']='cre' or //mods:name[@usage='primary']) and //mods:name[@type]))" />
                    
-		   <xsl:with-param name="ind2" select="string-length(mods:nonSort)"/>
+		   <xsl:with-param name="ind2">
+		   <xsl:choose>
+		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   </xsl:choose>
+		   </xsl:with-param>
 		   <xsl:with-param name="subfields">
 		         <xsl:call-template name="titleInfo"/>
 	                 <xsl:call-template name="stmtOfResponsibility"/>
@@ -963,7 +968,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">242</xsl:with-param>
 			<xsl:with-param name="ind1">1</xsl:with-param>
-			<xsl:with-param name="ind2" select="string-length(mods:nonSort)"/>
+			<xsl:with-param name="ind2">
+		   <xsl:choose>
+		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   </xsl:choose>
+		   </xsl:with-param>
 			<xsl:with-param name="subfields">
 				<xsl:call-template name="titleInfo"/>
 			</xsl:with-param>
@@ -987,7 +997,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 				<xsl:call-template name="datafield">
 					<xsl:with-param name="tag">240</xsl:with-param>
 					<xsl:with-param name="ind1">1</xsl:with-param>
-					<xsl:with-param name="ind2" select="string-length(mods:nonSort)"/>
+					<xsl:with-param name="ind2">
+		   <xsl:choose>
+		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   </xsl:choose>
+		   </xsl:with-param>
 					<xsl:with-param name="subfields">
 						<xsl:call-template name="titleInfo"/>
 					</xsl:with-param>
@@ -996,7 +1011,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 			<xsl:otherwise>
 				<xsl:call-template name="datafield">
 					<xsl:with-param name="tag">130</xsl:with-param>
-					<xsl:with-param name="ind1" select="string-length(mods:nonSort)"/>
+					<xsl:with-param name="ind1">
+		   <xsl:choose>
+		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   </xsl:choose>
+		   </xsl:with-param>
 					<xsl:with-param name="subfields">
 						<xsl:call-template name="titleInfo"/>
 					</xsl:with-param>
@@ -1009,7 +1029,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 	<xsl:template match="mods:titleInfo[@type='uniform'][position()>1]">		
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">730</xsl:with-param>
-			<xsl:with-param name="ind1" select="string-length(mods:nonSort)"/>
+			<xsl:with-param name="ind1">
+		   <xsl:choose>
+		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   </xsl:choose>
+		   </xsl:with-param>
 			<xsl:with-param name="subfields">
 				<xsl:call-template name="titleInfo"/>
 			</xsl:with-param>
@@ -1925,7 +1950,12 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
         <xsl:template match="mods:subject[local-name(*[1])='titleInfo']">		
 		<xsl:call-template name="datafield">
 			<xsl:with-param name="tag">630</xsl:with-param>
-			<xsl:with-param name="ind1"><xsl:value-of select="string-length(mods:titleInfo/mods:nonSort)"/></xsl:with-param>
+			<xsl:with-param name="ind1">
+				<xsl:choose>
+				<xsl:when test="string-length(mods:titleInfo/mods:nonSort)=0"><xsl:value-of select="string-length(mods:titleInfo/mods:nonSort)"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="string-length(mods:titleInfo/mods:nonSort)+1"/></xsl:otherwise>
+				</xsl:choose>
+				</xsl:with-param>
 			<xsl:with-param name="ind2"><xsl:call-template name="authorityInd"/></xsl:with-param>
 			<xsl:with-param name="subfields">				
 				<xsl:for-each select="mods:titleInfo">
@@ -2165,7 +2195,10 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 	<xsl:template name="titleInfo">
 		<xsl:for-each select="mods:title">
 			<marc:subfield code="a">
-				<xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/>
+				<xsl:if test="string-length(../mods:nonSort)=0">
+				<xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:if>
+				<xsl:if test="string-length(../mods:nonSort)!=0"><xsl:value-of select="../mods:nonSort"/><xsl:text> </xsl:text><xsl:value-of select="."/>
+				</xsl:if>
     <!--  Add an ending colon before subtitile if it doesn't already have one  -->
 		                <xsl:if test="../mods:subTitle and not(substring(., string-length(.)) = ':')">
                                      <xsl:text> :</xsl:text>
@@ -2173,7 +2206,7 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
                         <xsl:if test="position()=last() and not(substring(.,string-length(.)) = '.')">
                                      <xsl:text>.</xsl:text>
                                 </xsl:if>
-                                     
+				
 			</marc:subfield>
 		</xsl:for-each>
 		<!-- 1/04 fix -->
