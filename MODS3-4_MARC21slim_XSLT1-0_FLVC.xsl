@@ -8,7 +8,11 @@
 	xmlns:marc="http://www.loc.gov/MARC21/slim">
 <!-- 
 	
-        Priscilla Caplan 2/25/14
+    Mike Demers 4/16/2014
+		Fixes for the display of MARC nonfiling/MODS nonSort and
+			Forces correct count of 245 Ind2 with trailing space, no trailing space, l', L', and trailing quotation
+		
+		Priscilla Caplan 2/25/14
 	Map sublocation to 852 $b
 
 	Priscilla Caplan 2/14/14
@@ -942,8 +946,14 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
                    
 		   <xsl:with-param name="ind2">
 		   <xsl:choose>
+		   <!-- Updated 4/2014 MD -->
 		   <xsl:when test="string-length(mods:nonSort)=0"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>
-		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort)+1"/></xsl:otherwise>
+		   <xsl:when test="../mods:titleInfo/mods:nonSort = &quot;l&apos;&quot;"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>   <!--Checks for l'-->
+		   <xsl:when test="../mods:titleInfo/mods:nonSort = &quot;L&apos;&quot;"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>	<!--Checks for L'-->
+		   <xsl:when test="../mods:titleInfo/mods:nonSort = '&quot;'"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>	<!--Checks for "-->
+		   <xsl:when test="substring(mods:nonSort, string-length(mods:nonSort), 1) = ' '"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>	<!--Checks for trailing space-->
+		   <xsl:when test="substring(mods:nonSort, string-length(mods:nonSort), 1) = '&quot;'"><xsl:value-of select="string-length(mods:nonSort)"/></xsl:when>	<!--Checks for "-->
+		   <xsl:otherwise><xsl:value-of select="string-length(mods:nonSort) + 1"/></xsl:otherwise>	<!--Fixes character count for lack of trailing space in nonSort-->
 		   </xsl:choose>
 		   </xsl:with-param>
 		   <xsl:with-param name="subfields">
@@ -2195,10 +2205,18 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 	<xsl:template name="titleInfo">
 		<xsl:for-each select="mods:title">
 			<marc:subfield code="a">
-				<xsl:if test="string-length(../mods:nonSort)=0">
-				<xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:if>
-				<xsl:if test="string-length(../mods:nonSort)!=0"><xsl:value-of select="../mods:nonSort"/><xsl:text> </xsl:text><xsl:value-of select="."/>
-				</xsl:if>
+		<!-- Updated 4/2014 MD -->	
+			<xsl:choose>
+				<xsl:when test="string-length(../mods:nonSort)=0">
+							<xsl:value-of select="."/></xsl:when>
+				<xsl:when test="substring(../mods:nonSort, string-length(../mods:nonSort), 1) = ' '"><xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:when>	<!--trailing space-->
+				<xsl:when test="../mods:nonSort = &quot;l&apos;&quot;"><xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:when>	<!--l'-->
+				<xsl:when test="../mods:nonSort = &quot;L&apos;&quot;"><xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:when>	<!--L'-->
+				<xsl:when test="../mods:nonSort = '&quot;'"><xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:when>	<!--"-->
+				<xsl:when test="substring(../mods:nonSort, string-length(../mods:nonSort), 1) = '&quot;'"><xsl:value-of select="../mods:nonSort"/><xsl:value-of select="."/></xsl:when>		<!--space "-->
+				<xsl:otherwise><xsl:value-of select="../mods:nonSort"/><xsl:text> </xsl:text><xsl:value-of select="."/>		<!--addes space in absence of trailing space in MODS-->
+				</xsl:otherwise>
+				</xsl:choose>
     <!--  Add an ending colon before subtitile if it doesn't already have one  -->
 		                <xsl:if test="../mods:subTitle and not(substring(., string-length(.)) = ':')">
                                      <xsl:text> :</xsl:text>
