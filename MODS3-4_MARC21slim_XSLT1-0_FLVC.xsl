@@ -8,7 +8,11 @@
 	xmlns:marc="http://www.loc.gov/MARC21/slim">
 <!-- 
 	
-    Mike Demers 4/16/2014
+    Mike Demers 5/1/2014
+		Name as subject subfield $a bug fixed. Selecting "." instead of namePart. 
+		Ind2 bug fixed. Added for-each to reference parent subject element.
+	
+	Mike Demers 4/16/2014
 		Fixes for the display of MARC nonfiling/MODS nonSort and
 			Forces correct count of 245 Ind2 with trailing space, no trailing space, l', L', and trailing quotation
 		
@@ -1976,7 +1980,7 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 		</xsl:call-template>	
 		
 	</xsl:template>
-	
+	<!--name as subject subfield and ind2 fixes MD-->
 	<xsl:template match="mods:subject[local-name(*[1])='name']">
 		<xsl:for-each select="*[1]">
 			<xsl:choose>
@@ -1984,11 +1988,15 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 					<xsl:call-template name="datafield">
 						<xsl:with-param name="tag">600</xsl:with-param>
 						<xsl:with-param name="ind1">1</xsl:with-param>
-						<xsl:with-param name="ind2"><xsl:call-template name="authorityInd"/></xsl:with-param>
+
+						<xsl:with-param name="ind2"><xsl:for-each select=".."><xsl:call-template name="authorityInd"/></xsl:for-each></xsl:with-param>
+
 						<xsl:with-param name="subfields">
+							<xsl:for-each select="mods:namePart[not(@type) or @type='given' or @type='family']" >
 							<marc:subfield code="a">
-								<xsl:value-of select="mods:namePart"/>
+								<xsl:value-of select="."/>
 							</marc:subfield>
+							</xsl:for-each>
 							<!-- v3 termsofAddress -->
 							<xsl:for-each select="mods:namePart[@type='termsOfAddress']">
 								<marc:subfield code="c">
@@ -2020,7 +2028,7 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 					<xsl:call-template name="datafield">
 						<xsl:with-param name="tag">610</xsl:with-param>
 						<xsl:with-param name="ind1">2</xsl:with-param>
-						<xsl:with-param name="ind2"><xsl:call-template name="authorityInd"/></xsl:with-param>
+						<xsl:with-param name="ind2"><xsl:for-each select=".."><xsl:call-template name="authorityInd"/></xsl:for-each></xsl:with-param>
 						<xsl:with-param name="subfields">
 							<marc:subfield code="a">
 								<xsl:value-of select="mods:namePart"/>
@@ -2046,10 +2054,10 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 					<xsl:call-template name="datafield">
 						<xsl:with-param name="tag">611</xsl:with-param>
 						<xsl:with-param name="ind1">2</xsl:with-param>
-						<xsl:with-param name="ind2"><xsl:call-template name="authorityInd"/></xsl:with-param>
+						<xsl:with-param name="ind2"><xsl:for-each select=".."><xsl:call-template name="authorityInd"/></xsl:for-each></xsl:with-param>
 						<xsl:with-param name="subfields">
 							<marc:subfield code="a">
-								<xsl:value-of select="mods:namePart"/>
+								<xsl:value-of select="."/>
 							</marc:subfield>
 							<!-- v3 role -->
 							<xsl:for-each select="mods:role/mods:roleTerm[@type='code']">
