@@ -54,9 +54,9 @@
                             <url>
                                 <xsl:text>http://purl.flvc.org/</xsl:text>
                                 <xsl:value-of
-                                    select="translate(mods:extension/flvc:flvc/flvc:owningInstitution, $uppercase, $smallcase)"/>
+                                    select="normalize-space(translate(mods:extension/flvc:flvc/flvc:owningInstitution, $uppercase, $smallcase))"/>
                                 <xsl:text>/fd/</xsl:text>
-                                <xsl:value-of select="mods:identifier[@type='IID']"/>
+                                <xsl:value-of select="normalize-space(mods:identifier[@type='IID'])"/>
                             </url>
                         </location>
                     </xsl:when>
@@ -64,9 +64,9 @@
                         <location displayLabel="purl">
                             <url>
                                 <xsl:text>http://purl.flvc.org/</xsl:text>
-                                <xsl:value-of select="translate((document('info.xml')/root/owner_inst), $uppercase, $smallcase)"/>
+                                <xsl:value-of select="normalize-space(translate((document('info.xml')/root/owner_inst), $uppercase, $smallcase))"/>
                                 <xsl:text>/fd/</xsl:text>
-                                <xsl:value-of select="mods:identifier[@type='IID']"/>
+                                <xsl:value-of select="normalize-space(mods:identifier[@type='IID'])"/>
                             </url>
                         </location>
                     </xsl:otherwise>
