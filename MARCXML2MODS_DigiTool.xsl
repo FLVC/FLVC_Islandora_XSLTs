@@ -8,6 +8,7 @@
 
 	<!--FLVC version continuation, Islandora project, updates by MDemers
 	
+		v9: (01.2015) added Ind1 to displayLabel mapping for 520/abstract.
 		v8: (04.2014) added 69x local mappings and "sears" authority as Ind2=8
 		
 		-->
@@ -1964,22 +1965,6 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 <!--Added 690 Map to 650 4.8.2014 MD v8-->
 		<xsl:for-each select="marc:datafield[@tag=690]">
 			<xsl:call-template name="createSubTopFrom650"/>
-		</xsl:for-each>
-		<!--Added rest of 69X locals, just in case. 4.9.2014 MD v8-->
-		<xsl:for-each select="marc:datafield[@tag=691]">
-			<xsl:call-template name="createSubTopFrom651"/>
-		</xsl:for-each>	
-		<xsl:for-each select="marc:datafield[@tag=696]">
-			<xsl:call-template name="createSubTopFrom600"/>
-		</xsl:for-each>	
-		<xsl:for-each select="marc:datafield[@tag=697]">
-			<xsl:call-template name="createSubTopFrom610"/>
-		</xsl:for-each>
-		<xsl:for-each select="marc:datafield[@tag=698]">
-			<xsl:call-template name="createSubTopFrom611"/>
-		</xsl:for-each>
-		<xsl:for-each select="marc:datafield[@tag=699]">
-			<xsl:call-template name="createSubTopFrom630"/>
 		</xsl:for-each>
 
 		<!-- createClassificationFrom 0XX-->
@@ -4138,22 +4123,6 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			<xsl:when test="$sf06a='690'">
 				<xsl:call-template name="createSubTopFrom650"/>
 			</xsl:when>
-			<!--Added rest of 69X locals, just in case. 4.9.2014 MD v8-->
-			<xsl:when test="$sf06a='691'">
-				<xsl:call-template name="createSubTopFrom651"/>
-			</xsl:when>
-			<xsl:when test="$sf06a='696'">
-				<xsl:call-template name="createSubTopFrom600"/>
-			</xsl:when>
-			<xsl:when test="$sf06a='697'">
-				<xsl:call-template name="createSubTopFrom610"/>
-			</xsl:when>
-			<xsl:when test="$sf06a='698'">
-				<xsl:call-template name="createSubTopFrom611"/>
-			</xsl:when>
-			<xsl:when test="$sf06a='699'">
-				<xsl:call-template name="createSubTopFrom630"/>
-			</xsl:when>
 			
 			<!--  location  852 856 -->
 
@@ -4562,7 +4531,8 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 
 	<!-- abstract 520 -->
 
-	<xsl:template name="createAbstractFrom520">
+	<xsl:template name="createAbstractFrom520">  
+		<xsl:if test="@ind1=' '">
 		<abstract>
 			<xsl:call-template name="xxx880"/>
 			<xsl:call-template name="uri"/>
@@ -4570,6 +4540,52 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 				<xsl:with-param name="codes">ab</xsl:with-param>
 			</xsl:call-template>
 		</abstract>
+		</xsl:if>
+		<xsl:if test="@ind1='0'">
+		<abstract displayLabel="Subject">
+			<xsl:call-template name="xxx880"/>
+			<xsl:call-template name="uri"/>
+			<xsl:call-template name="subfieldSelect">
+				<xsl:with-param name="codes">ab</xsl:with-param>
+			</xsl:call-template>
+		</abstract>
+		</xsl:if>
+		<xsl:if test="@ind1='1'">
+		<abstract displayLabel="Review">
+			<xsl:call-template name="xxx880"/>
+			<xsl:call-template name="uri"/>
+			<xsl:call-template name="subfieldSelect">
+				<xsl:with-param name="codes">ab</xsl:with-param>
+			</xsl:call-template>
+		</abstract>
+		</xsl:if>
+		<xsl:if test="@ind1='2'">
+		<abstract displayLabel="Scope and content">
+			<xsl:call-template name="xxx880"/>
+			<xsl:call-template name="uri"/>
+			<xsl:call-template name="subfieldSelect">
+				<xsl:with-param name="codes">ab</xsl:with-param>
+			</xsl:call-template>
+		</abstract>
+		</xsl:if>
+		<xsl:if test="@ind1='3'">
+		<abstract displayLabel="Abstract">
+			<xsl:call-template name="xxx880"/>
+			<xsl:call-template name="uri"/>
+			<xsl:call-template name="subfieldSelect">
+				<xsl:with-param name="codes">ab</xsl:with-param>
+			</xsl:call-template>
+		</abstract>
+		</xsl:if>
+		<xsl:if test="@ind1='4'">
+		<abstract displayLabel="Content advice">
+			<xsl:call-template name="xxx880"/>
+			<xsl:call-template name="uri"/>
+			<xsl:call-template name="subfieldSelect">
+				<xsl:with-param name="codes">ab</xsl:with-param>
+			</xsl:call-template>
+		</abstract>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- targetAudience 521 -->
