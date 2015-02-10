@@ -1021,9 +1021,11 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 					</frequency>
 				</xsl:variable>
 				<xsl:if test="$frequency!=''">
-					<frequency>
-						<xsl:value-of select="$frequency"/>
-					</frequency>
+					<originInfo>
+						<frequency>
+							<xsl:value-of select="$frequency"/>
+						</frequency>
+					</originInfo>
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:if>
@@ -1966,6 +1968,22 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		<xsl:for-each select="marc:datafield[@tag=690]">
 			<xsl:call-template name="createSubTopFrom650"/>
 		</xsl:for-each>
+		<!--Added rest of 69X locals, just in case. 4.9.2014 MD v8-->
+- <xsl:for-each select="marc:datafield[@tag=691]">
+- <xsl:call-template name="createSubTopFrom651"/>
+- </xsl:for-each>
+- <xsl:for-each select="marc:datafield[@tag=696]">
+- <xsl:call-template name="createSubTopFrom600"/>
+- </xsl:for-each>
+- <xsl:for-each select="marc:datafield[@tag=697]">
+- <xsl:call-template name="createSubTopFrom610"/>
+- </xsl:for-each>
+- <xsl:for-each select="marc:datafield[@tag=698]">
+- <xsl:call-template name="createSubTopFrom611"/>
+- </xsl:for-each>
+- <xsl:for-each select="marc:datafield[@tag=699]">
+- <xsl:call-template name="createSubTopFrom630"/>
+- </xsl:for-each>
 
 		<!-- createClassificationFrom 0XX-->
 		<xsl:for-each select="marc:datafield[@tag='050']">
@@ -4123,6 +4141,22 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			<xsl:when test="$sf06a='690'">
 				<xsl:call-template name="createSubTopFrom650"/>
 			</xsl:when>
+			<!--Added rest of 69X locals, just in case. 4.9.2014 MD v8-->
+- <xsl:when test="$sf06a='691'">
+- <xsl:call-template name="createSubTopFrom651"/>
+- </xsl:when>
+- <xsl:when test="$sf06a='696'">
+- <xsl:call-template name="createSubTopFrom600"/>
+- </xsl:when>
+- <xsl:when test="$sf06a='697'">
+- <xsl:call-template name="createSubTopFrom610"/>
+- </xsl:when>
+- <xsl:when test="$sf06a='698'">
+- <xsl:call-template name="createSubTopFrom611"/>
+- </xsl:when>
+- <xsl:when test="$sf06a='699'">
+- <xsl:call-template name="createSubTopFrom630"/>
+- </xsl:when>
 			
 			<!--  location  852 856 -->
 
