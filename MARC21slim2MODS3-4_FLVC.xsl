@@ -1968,19 +1968,19 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		</xsl:for-each>
 		<!--Added rest of 69X locals, just in case. 4.15.2014 MD v8-->
 		<xsl:for-each select="marc:datafield[@tag=691]">
-			<xsl:call-template name="createSubTopFrom651"/>
+			<xsl:call-template name="createSubGeoFrom651"/>
 		</xsl:for-each>	
 		<xsl:for-each select="marc:datafield[@tag=696]">
-			<xsl:call-template name="createSubTopFrom600"/>
+			<xsl:call-template name="createSubNameFrom600"/>
 		</xsl:for-each>	
 		<xsl:for-each select="marc:datafield[@tag=697]">
-			<xsl:call-template name="createSubTopFrom610"/>
+			<xsl:call-template name="createSubNameFrom610"/>
 		</xsl:for-each>
 		<xsl:for-each select="marc:datafield[@tag=698]">
-			<xsl:call-template name="createSubTopFrom611"/>
+			<xsl:call-template name="createSubNameFrom611"/>
 		</xsl:for-each>
 		<xsl:for-each select="marc:datafield[@tag=699]">
-			<xsl:call-template name="createSubTopFrom630"/>
+			<xsl:call-template name="createSubTitleFrom630"/>
 		</xsl:for-each>
 		
 		<!-- createClassificationFrom 0XX-->
@@ -4144,19 +4144,19 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			</xsl:when>
 			<!--Added rest of 69X locals, just in case. 4.15.2014 MD v8-->
 			<xsl:when test="$sf06a='691'">
-				<xsl:call-template name="createSubTopFrom651"/>
+				<xsl:call-template name="createSubGeoFrom651"/>
 			</xsl:when>
 			<xsl:when test="$sf06a='696'">
-				<xsl:call-template name="createSubTopFrom600"/>
+				<xsl:call-template name="createSubNameFrom600"/>
 			</xsl:when>
 			<xsl:when test="$sf06a='697'">
-				<xsl:call-template name="createSubTopFrom610"/>
+				<xsl:call-template name="createSubNameFrom610"/>
 			</xsl:when>
 			<xsl:when test="$sf06a='698'">
-				<xsl:call-template name="createSubTopFrom611"/>
+				<xsl:call-template name="createSubNameFrom611"/>
 			</xsl:when>
 			<xsl:when test="$sf06a='699'">
-				<xsl:call-template name="createSubTopFrom630"/>
+				<xsl:call-template name="createSubTitleFrom630"/>
 			</xsl:when>
 			
 			<!--  location  852 856 -->
