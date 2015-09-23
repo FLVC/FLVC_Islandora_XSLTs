@@ -2307,13 +2307,16 @@ test="string(number(mods:originInfo/mods:dateCreated[@point='end'])) != 'NaN'">
 				<xsl:otherwise><xsl:value-of select="../mods:nonSort"/><xsl:text> </xsl:text><xsl:value-of select="."/>		<!--addes space in absence of trailing space in MODS-->
 				</xsl:otherwise>
 				</xsl:choose>
-    <!--  Add an ending colon before subtitile if it doesn't already have one  -->
-		                <xsl:if test="../mods:subTitle and not(substring(., string-length(.)) = ':')">
+    <!--  Add an ending colon before subtitle if it doesn't already have one  -->
+		                <xsl:choose>
+						<xsl:when test="../mods:subTitle and not(substring(., string-length(.)) = ':')">
                                      <xsl:text> :</xsl:text>
-                                </xsl:if>  
+                                </xsl:when>
+						<xsl:otherwise>
                         <xsl:if test="position()=last() and not(substring(.,string-length(.)) = '.')">
                                      <xsl:text>.</xsl:text>
                                 </xsl:if>
+								</xsl:otherwise></xsl:choose>
 				
 			</marc:subfield>
 		</xsl:for-each>
