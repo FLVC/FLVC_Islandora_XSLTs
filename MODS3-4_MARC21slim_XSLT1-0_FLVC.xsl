@@ -7,6 +7,11 @@
 	exclude-result-prefixes="mods xlink" 
 	xmlns:marc="http://www.loc.gov/MARC21/slim">
 <!-- 
+	MD 10/05/15
+		Added genre='periodical' map to 's' in Leader char07 bib level for serial designation in Mango feed.
+	
+	Mike Demers 09/23/15
+		Fixed period added to colon before subtitle
 	
 	Mike Demers 03/16/15
 		Added subdivision subfields to name as subjects. Added Genre subfield to other 6XXs.
@@ -245,6 +250,7 @@
 					<xsl:when test="mods:originInfo/mods:issuance='single unit'">m</xsl:when>
 					<xsl:when test="mods:originInfo/mods:issuance='integrating resource'">i</xsl:when>
 					<xsl:when test="mods:originInfo/mods:issuance='serial'">s</xsl:when>
+					<xsl:when test="mods:genre='periodical' and not (mods:originInfo/mods:issuance='monographic') or (mods:originInfo/mods:issuance='multipart monograph') or (mods:originInfo/mods:issuance='single unit')">s</xsl:when>
 					<xsl:otherwise>m</xsl:otherwise>
 				</xsl:choose>
 				<!-- 08 -->
