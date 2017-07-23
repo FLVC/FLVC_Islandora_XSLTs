@@ -26,8 +26,9 @@
 	-->
 
 	<!-- Maintenance note: For each revision, change the content of <recordInfo><recordOrigin> to reflect the new revision number.
-	MARC21slim2MODS3-4 (Revision 1.86) 20130610
+	MARC21slim2MODS3-6 (Revision 1.88) 20170723
 
+Revision 1.88 - Copied to new file and changed versions to 3.6 - 2017/07/23
 Revision 1.87 - Fixed mapping 245$c to note - 2017/07/23
 Revision 1.86 - Refined 653 mapping - tmee 2013/06/10
 Revision 1.85 - Fixed 245 $c - tmee 2013/03/07
@@ -123,23 +124,23 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 							takes only the first <marc:record> element (thereby ignoring all other potential records
 							in the file  -->
 				<!-- <modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
 					<xsl:for-each select="//marc:collection/marc:record">
-						<mods version="3.4">
+						<mods version="3.6">
 							<xsl:call-template name="marcRecord"/>
 						</mods>
 					</xsl:for-each>
 					</modsCollection> -->
 				<xsl:for-each select="//marc:record[1]">
-					<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4"
-					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+					<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.6"
+					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
 						<xsl:call-template name="marcRecord"/>
 					</mods>
 				</xsl:for-each>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4"
-					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.6"
+					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
 					<xsl:for-each select="//marc:record">
 						<xsl:call-template name="marcRecord"/>
 					</xsl:for-each>
@@ -2738,7 +2739,7 @@ Revision 1.02 - Added Log Comment  2003/03/24 19:37:42  ckeith
 				</recordIdentifier>
 			</xsl:for-each>
 
-			<recordOrigin>Converted from MARCXML to MODS v3.4 using MARC21slim2MODS3-4_FLVC.xsl (LOC rev 1.87 / 20170723) (FLVC v10)</recordOrigin>
+			<recordOrigin>Converted from MARCXML to MODS v3.6 using MARC21slim2MODS3-6_FLVC.xsl (LOC rev 1.88 / 20170723) (FLVC v10)</recordOrigin>
 
 			<xsl:for-each select="marc:datafield[@tag=040]/marc:subfield[@code='b']">
 				<languageOfCataloging>
