@@ -325,9 +325,11 @@ Version 1.0	2007-05-04 Tracy Meehleib <tmee@loc.gov>
 	</xsl:template>
 
 	<xsl:template match="mods:language">
+            <xsl:for-each select="mods:languageTerm">
 		<dc:language>
 			<xsl:value-of select="normalize-space(.)"/>
 		</dc:language>
+            </xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="mods:relatedItem[mods:titleInfo | mods:name | mods:identifier | mods:location]">
