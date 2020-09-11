@@ -81,7 +81,7 @@
             <xsl:apply-templates select="mods:physicalLocation"/>
             <xsl:apply-templates select="mods:shelfLocator"/>
             <xsl:apply-templates select="mods:url"/>
-            <xsl:apply-templates select="mods:holdingSimple"/>
+            <xsl:apply-templates select="mods:holdingSimple[normalize-space()]"/>
             <xsl:apply-templates select="mods:holdingExternal"/>
             
             <xsl:apply-templates select="node()[not(self::mods:physicalLocation|self::mods:shelfLocator|self::mods:url|self::mods:holdingSimple|self::mods:holdingExternal)]"/>
